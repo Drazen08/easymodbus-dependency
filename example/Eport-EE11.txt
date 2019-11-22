@@ -1,0 +1,4 @@
+#csv格式的文件，各列依次如下,scale默认为1，offset默认0
+#点位名(string),unitId(byte),functionCode(short),regAddr(short),regCount(short),dateType(string),scale(float),offset(float)
+temp,1,3,101,1,short,0.1,0
+hum,1,3,102,1,short,0.1,0

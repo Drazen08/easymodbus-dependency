@@ -1,6 +1,6 @@
  package com.github.sunjx.modbus.codec;
 
- import com.github.zengfr.easymodbus4j.protocol.ModbusFunction;
+ import com.github.sunjx.modbus.protocol.ModbusFunction;
  import io.netty.buffer.ByteBuf;
 
 

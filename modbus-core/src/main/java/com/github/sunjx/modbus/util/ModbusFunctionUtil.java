@@ -1,7 +1,7 @@
  package com.github.sunjx.modbus.util;
 
- import com.github.zengfr.easymodbus4j.common.util.ByteUtil;
- import com.github.zengfr.easymodbus4j.protocol.ModbusFunction;
+ import com.github.sunjx.modbus.common.util.ByteUtil;
+ import com.github.sunjx.modbus.protocol.ModbusFunction;
  import io.netty.buffer.ByteBuf;
 
 

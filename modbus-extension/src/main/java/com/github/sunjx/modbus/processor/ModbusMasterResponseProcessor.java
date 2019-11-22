@@ -1,7 +1,7 @@
 package com.github.sunjx.modbus.processor;
 
-import com.github.zengfr.easymodbus4j.func.AbstractRequest;
-import com.github.zengfr.easymodbus4j.protocol.ModbusFunction;
+import com.github.sunjx.modbus.func.AbstractRequest;
+import com.github.sunjx.modbus.protocol.ModbusFunction;
 import io.netty.channel.Channel;
 
 public interface ModbusMasterResponseProcessor extends ModbusProcessor {

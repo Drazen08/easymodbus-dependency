@@ -38,6 +38,7 @@
 
 
 
+   @Override
    protected void initPipelinePreProcessHandler(ChannelPipeline pipeline) {
 /* 42 */     pipeline.addLast("framer", (ChannelHandler)new ModbusTcpLFBFrameDecoder(true));
 /* 43 */     if (this.isSlave.booleanValue()) {
@@ -47,6 +48,7 @@
      }
    }
 
+   @Override
    protected void initPipelinePostProcessHandler(ChannelPipeline pipeline) {}
  }
 

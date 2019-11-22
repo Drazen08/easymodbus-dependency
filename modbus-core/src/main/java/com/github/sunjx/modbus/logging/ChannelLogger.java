@@ -3,6 +3,7 @@ package com.github.sunjx.modbus.logging;
 import io.netty.channel.Channel;
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
+import org.slf4j.MDC;
 
 
 public class ChannelLogger {

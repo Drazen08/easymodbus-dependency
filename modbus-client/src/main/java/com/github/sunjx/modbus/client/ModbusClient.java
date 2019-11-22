@@ -1,6 +1,5 @@
 package com.github.sunjx.modbus.client;
 
-import com.github.sunjx.modbus.cache.ModebusFrameCacheFactory;
 import com.github.sunjx.modbus.channel.ChannelManager;
 import com.github.sunjx.modbus.channel.ChannelManagerImpl;
 import com.github.sunjx.modbus.channel.ChannelReconnectable;
@@ -19,11 +18,10 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.util.concurrent.DefaultThreadFactory;
-/*     */
+
 import io.netty.util.concurrent.GenericFutureListener;
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
-import lombok.extern.slf4j.Slf4j;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -77,7 +75,7 @@ public abstract class ModbusClient
     protected void init(ChannelInitializer<SocketChannel> handler) throws Exception {
         try {
             int threads = Math.max(2, Runtime.getRuntime().availableProcessors() * 2 - 1);
-            this.workerGroup = (EventLoopGroup) new NioEventLoopGroup(threads, (ThreadFactory) new DefaultThreadFactory("client", false));
+            this.workerGroup = new NioEventLoopGroup(threads, (ThreadFactory) new DefaultThreadFactory("client", false));
             this.bootstrap = new Bootstrap();
             this.bootstrap.group(this.workerGroup);
             this.bootstrap.channel(NioSocketChannel.class);

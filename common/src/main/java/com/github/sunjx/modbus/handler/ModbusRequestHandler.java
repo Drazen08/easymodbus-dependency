@@ -1,5 +1,7 @@
 package com.github.sunjx.modbus.handler;
 
+import com.github.sunjx.modbus.func.request.*;
+import com.github.sunjx.modbus.func.response.*;
 import com.github.sunjx.modbus.logging.ChannelLogger;
 import com.github.sunjx.modbus.protocol.ModbusFunction;
 import com.github.sunjx.modbus.protocol.tcp.ModbusFrame;
@@ -18,7 +20,6 @@ public abstract class ModbusRequestHandler
     private static final ChannelLogger log = ChannelLogger.getLogger(ModbusRequestHandler.class);
 
 
-    @Override
     protected void channelRead0(ChannelHandlerContext ctx, ModbusFrame frame) throws Exception {
         Channel channel = ctx.channel();
         log.debug(channel, "channelRead0", new Object[0]);
@@ -102,6 +103,7 @@ public abstract class ModbusRequestHandler
     protected abstract ReadDiscreteInputsResponse readDiscreteInputs(short paramShort, ReadDiscreteInputsRequest paramReadDiscreteInputsRequest);
 
     protected abstract ReadInputRegistersResponse readInputRegisters(short paramShort, ReadInputRegistersRequest paramReadInputRegistersRequest);
+
 
     protected abstract ReadHoldingRegistersResponse readHoldingRegisters(short paramShort, ReadHoldingRegistersRequest paramReadHoldingRegistersRequest);
 

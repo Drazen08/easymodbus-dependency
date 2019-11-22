@@ -1,7 +1,8 @@
  package com.github.sunjx.modbus.sender.util;
 
- import com.github.zengfr.easymodbus4j.protocol.ModbusFunction;
- import com.github.zengfr.easymodbus4j.sender.ChannelSender;
+ import com.github.sunjx.modbus.protocol.ModbusFunction;
+ import com.github.sunjx.modbus.sender.ChannelSender;
+
  import java.lang.reflect.InvocationTargetException;
  import java.lang.reflect.Method;
 

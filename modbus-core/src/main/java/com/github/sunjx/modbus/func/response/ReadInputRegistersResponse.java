@@ -53,10 +53,12 @@
 
 
 
-/* 56 */   public int calculateLength() { return 2 + this.byteCount; }
+/* 56 */   @Override
+public int calculateLength() { return 2 + this.byteCount; }
 
 
 
+   @Override
    public ByteBuf encode() {
 /* 61 */     ByteBuf buf = Unpooled.buffer(calculateLength());
 /* 62 */     buf.writeByte(getFunctionCode());

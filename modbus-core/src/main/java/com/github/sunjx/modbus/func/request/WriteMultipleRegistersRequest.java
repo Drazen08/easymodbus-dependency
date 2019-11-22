@@ -1,7 +1,7 @@
 /*     */ package com.github.sunjx.modbus.func.request;
 /*     */ 
-/*     */ import com.github.zengfr.easymodbus4j.func.AbstractRequest;
-/*     */ import io.netty.buffer.ByteBuf;
+/*     */ import com.github.sunjx.modbus.func.AbstractRequest;
+import io.netty.buffer.ByteBuf;
 /*     */ 
 /*     */ 
 /*     */ 
@@ -63,11 +63,13 @@
 /*     */ 
 /*     */ 
 /*     */   
-/*  66 */   public int calculateLength() { return super.calculateLength() + 1 + this.byteCount; }
+/*  66 */   @Override
+public int calculateLength() { return super.calculateLength() + 1 + this.byteCount; }
 /*     */ 
 /*     */ 
 /*     */   
-/*     */   public ByteBuf encode() {
+/*     */   @Override
+public ByteBuf encode() {
 /*  71 */     ByteBuf buf = super.encode();
 /*  72 */     buf.writeByte(this.byteCount);
 /*  73 */     for (int i = 0; i < this.registers.length; i++) {

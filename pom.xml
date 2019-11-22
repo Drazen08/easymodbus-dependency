@@ -16,6 +16,7 @@
         <module>modbus-extension</module>
         <module>common</module>
         <module>modbus-codec</module>
+        <module>example</module>
     </modules>
 
 
@@ -24,7 +25,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.37.Final</version>
+            <version>[4.1.42,)</version>
         </dependency>
 
         <dependency>

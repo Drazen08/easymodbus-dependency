@@ -54,6 +54,7 @@ public abstract class ModbusInboundHandler extends SimpleChannelInboundHandler<M
                 final ChannelReconnectable rc = (ChannelReconnectable) this.channelManager;
                 EventLoop eventLoop = ctx.channel().eventLoop();
                 eventLoop.schedule(new Runnable() {
+                    @Override
                     public void run() {
                         rc.reConnect();
                     }

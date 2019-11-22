@@ -11,5 +11,11 @@
 
     <artifactId>modbus-codec</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.github.sunjx</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
