@@ -49,34 +49,21 @@ public abstract class ModbusChannelInitializer extends ChannelInitializer<Socket
             log.info(String.format("initChannel->%s,%s", new Object[]{ch.localAddress(), ch.remoteAddress()}));
 
         }
-        /*  59 */
         ChannelPipeline pipeline = ch.pipeline();
-        /*  60 */
         initPipeline4Logging(pipeline);
-        /*  61 */
         initPipeline4Ping(pipeline);
-
-        /*  63 */
         initPipelinePreProcessHandler(pipeline);
-        /*  64 */
         initPipeline4ProcessHandler(pipeline);
-        /*  65 */
         initPipelinePostProcessHandler(pipeline);
-
-        /*  67 */
         initPipeline4HeartbeatIdle(pipeline);
 
     }
 
 
     protected void initPipeline4Logging(ChannelPipeline pipeline) {
-        /*  73 */
         if (isShowDebugLog(this.isSlave.booleanValue())) {
-            /*  74 */
-            pipeline.addLast("logging", (ChannelHandler) new ModbusLoggingHandler(LogLevel.DEBUG));
-
+            pipeline.addLast("logging", new ModbusLoggingHandler(LogLevel.DEBUG));
         }
-
     }
 
 
