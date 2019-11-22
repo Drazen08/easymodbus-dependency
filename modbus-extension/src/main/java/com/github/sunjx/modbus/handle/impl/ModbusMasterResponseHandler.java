@@ -67,6 +67,7 @@ public class ModbusMasterResponseHandler
 
 
     /* 71 */
+    @Override
     protected boolean processResponseFrame(Channel channel, int unitId, AbstractRequest reqFunc, ModbusFunction respFunc) {
         return this.processor.processResponseFrame(channel, unitId, reqFunc, respFunc);
     }

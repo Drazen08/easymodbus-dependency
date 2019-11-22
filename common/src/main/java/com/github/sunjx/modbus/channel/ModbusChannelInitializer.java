@@ -24,9 +24,8 @@ import java.nio.charset.Charset;
 
 
 @Sharable
-public abstract class ModbusChannelInitializer
-        extends ChannelInitializer<SocketChannel> {
-    /*  44 */   private static final InternalLogger log = InternalLoggerFactory.getInstance(ModbusChannelInitializer.class);
+public abstract class ModbusChannelInitializer extends ChannelInitializer<SocketChannel> {
+    private static final InternalLogger log = InternalLoggerFactory.getInstance(ModbusChannelInitializer.class);
     private final SimpleChannelInboundHandler<ModbusFrame> handler;
     protected final Boolean isSlave;
 

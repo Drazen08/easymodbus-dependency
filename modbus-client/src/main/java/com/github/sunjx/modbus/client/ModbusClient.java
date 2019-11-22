@@ -25,7 +25,6 @@ import io.netty.util.internal.logging.InternalLoggerFactory;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
 public abstract class ModbusClient
@@ -75,7 +74,8 @@ public abstract class ModbusClient
     protected void init(ChannelInitializer<SocketChannel> handler) throws Exception {
         try {
             int threads = Math.max(2, Runtime.getRuntime().availableProcessors() * 2 - 1);
-            this.workerGroup = new NioEventLoopGroup(threads, (ThreadFactory) new DefaultThreadFactory("client", false));
+            this.workerGroup = new NioEventLoopGroup(threads, new DefaultThreadFactory("client", false));
+
             this.bootstrap = new Bootstrap();
             this.bootstrap.group(this.workerGroup);
             this.bootstrap.channel(NioSocketChannel.class);
@@ -101,42 +101,31 @@ public abstract class ModbusClient
     }
 
     public void doConnect(final EventLoopGroup workerGroup) throws InterruptedException {
-        if (this.channel != null && this.channel.isActive()) {
-            return;
-        }
-        setConnectionState(CONNECTION_STATES.pending);
-        log.info(String.format("connect:%s,%s", new Object[]{this.host, Integer.valueOf(this.port)}));
-        ChannelFuture f = this.bootstrap.connect(this.host, this.port);
-        f.addListener((GenericFutureListener) new ChannelFutureListener() {
-            /**
-             *
-             */
-            @Override
-            public void operationComplete(ChannelFuture futureListener) throws Exception {
-                /* 128 */
-                if (futureListener.isSuccess()) {
-                    /* 129 */
-                    ModbusClient.this.channel = futureListener.channel();
-                    /* 130 */
-                    ModbusClient.this.setConnectionState(CONNECTION_STATES.connected);
-                    /* 131 */
-                    ModbusClient.log.info(String.format("connect:%s,%s successfully", new Object[]{ModbusClient.access$100(this.this$0), Integer.valueOf(ModbusClient.access$200(this.this$0))}));
-                    /* 132 */
-                    ModbusClient.this.channel.closeFuture().addListener(new GenericFutureListener<ChannelFuture>() {
-                        @Override
-                        public void operationComplete(ChannelFuture future) throws Exception {
-                            /* 136 */
-                            ModbusClient.this.setConnectionState(CONNECTION_STATES.notConnected);
-                        }
-                    });
-                } else {
-                    /* 140 */
-                    ModbusClient.log.info(String.format("connect:%s,%s failed, try connect after 10s", new Object[]{ModbusClient.access$100(this.this$0), Integer.valueOf(ModbusClient.access$200(this.this$0))}));
-                    /* 141 */
-                    ModbusClient.this.bindSchedule4DoConnect(futureListener.channel(), workerGroup);
+        if (this.channel == null || !this.channel.isActive()) {
+            this.setConnectionState(ModbusClient.CONNECTION_STATES.pending);
+            log.info(String.format("connect:%s,%s", this.host, this.port));
+            ChannelFuture f = this.bootstrap.connect(this.host, this.port);
+            f.addListener(new ChannelFutureListener() {
+                @Override
+                public void operationComplete(ChannelFuture futureListener) throws Exception {
+                    if (futureListener.isSuccess()) {
+                        ModbusClient.this.channel = futureListener.channel();
+                        ModbusClient.this.setConnectionState(ModbusClient.CONNECTION_STATES.connected);
+                        ModbusClient.log.info(String.format("connect:%s,%s successfully", ModbusClient.this.host, ModbusClient.this.port));
+                        ModbusClient.this.channel.closeFuture().addListener(new GenericFutureListener<ChannelFuture>() {
+                            @Override
+                            public void operationComplete(ChannelFuture future) throws Exception {
+                                ModbusClient.this.setConnectionState(ModbusClient.CONNECTION_STATES.notConnected);
+                            }
+                        });
+                    } else {
+                        ModbusClient.log.info(String.format("connect:%s,%s failed, try connect after 10s", ModbusClient.this.host, ModbusClient.this.port));
+                        ModbusClient.this.bindSchedule4DoConnect(futureListener.channel(), workerGroup);
+                    }
+
                 }
-            }
-        });
+            });
+        }
     }
 
 
@@ -156,7 +145,7 @@ public abstract class ModbusClient
                     ModbusClient.log.error("doConnect", ex);
                 }
             }
-        },10L, TimeUnit.SECONDS);
+        }, 10L, TimeUnit.SECONDS);
     }
 
 

@@ -4,7 +4,11 @@ import io.netty.channel.Channel;
 
 import java.util.Collection;
 
+/**
+ * channel 对外封装
+ */
 public interface ChannelManager {
+
     Collection<Channel> getChannels();
 
     void removeChannel(Channel paramChannel);
