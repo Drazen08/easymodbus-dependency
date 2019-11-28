@@ -49,25 +49,24 @@ public class ModbusHeader {
     public static ModbusHeader decode(ByteBuf buffer) {
         /* 56 */
         return new ModbusHeader(buffer.readUnsignedShort(), buffer
-/* 57 */.readUnsignedShort(), buffer
-/* 58 */.readUnsignedShort() - 1, buffer
-/* 59 */.readUnsignedByte());
+                .readUnsignedShort(), buffer
+                .readUnsignedShort() - 1, buffer
+                .readUnsignedByte());
     }
 
     public ByteBuf encode() {
         /* 63 */
         ByteBuf buf = Unpooled.buffer();
 
-        /* 65 */
+        // 写2 byte 定长
         buf.writeShort(this.transactionIdentifier);
-        /* 66 */
+
         buf.writeShort(this.protocolIdentifier);
-        /* 67 */
+
         buf.writeShort(this.length);
-        /* 68 */
+
         buf.writeByte(this.unitIdentifier);
 
-        /* 70 */
         return buf;
     }
 

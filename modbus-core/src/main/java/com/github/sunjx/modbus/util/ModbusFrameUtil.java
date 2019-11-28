@@ -8,10 +8,9 @@ import com.github.sunjx.modbus.common.util.PadUtil;
 import com.github.sunjx.modbus.logging.ChannelLogger;
 import com.github.sunjx.modbus.protocol.ModbusFunction;
 import com.github.sunjx.modbus.protocol.tcp.ModbusFrame;
-import com.sun.deploy.util.StringUtils;
 import io.netty.channel.Channel;
 import io.netty.util.internal.logging.InternalLogger;
-
+import org.apache.commons.lang3.StringUtils;
 import java.util.BitSet;
 
 

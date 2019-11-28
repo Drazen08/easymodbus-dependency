@@ -50,7 +50,13 @@ public class ChannelSender
         return callModbusFunction((ModbusFunction) new ReadInputRegistersRequest(startAddress, quantityOfInputRegisters));
     }
 
-
+    /**
+     * 使用
+     * @param startAddress
+     * @param quantityOfInputRegisters
+     * @return
+     * @throws Exception
+     */
     public int readHoldingRegistersAsync(int startAddress, int quantityOfInputRegisters) throws Exception {
         return callModbusFunction((ModbusFunction) new ReadHoldingRegistersRequest(startAddress, quantityOfInputRegisters));
     }

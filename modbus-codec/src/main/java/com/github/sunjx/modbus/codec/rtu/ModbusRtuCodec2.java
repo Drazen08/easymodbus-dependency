@@ -56,6 +56,7 @@ public class ModbusRtuCodec2
     }
 
 
+    @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
         /* 65 */
         int startIndex = in.readerIndex();

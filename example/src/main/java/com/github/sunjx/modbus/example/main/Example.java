@@ -1,6 +1,6 @@
 package com.github.sunjx.modbus.example.main;
 
-import com.github.zengfr.easymodbus4j.example.ModbusConsoleApp;
+import com.github.sunjx.modbus.example.example.ModbusConsoleApp;
 
 /**
  * @author zengfr QQ:362505707/1163551688 Email:zengfr3000@qq.com

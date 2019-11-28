@@ -20,6 +20,7 @@ public abstract class ModbusRequestHandler
     private static final ChannelLogger log = ChannelLogger.getLogger(ModbusRequestHandler.class);
 
 
+    @Override
     protected void channelRead0(ChannelHandlerContext ctx, ModbusFrame frame) throws Exception {
         Channel channel = ctx.channel();
         log.debug(channel, "channelRead0", new Object[0]);

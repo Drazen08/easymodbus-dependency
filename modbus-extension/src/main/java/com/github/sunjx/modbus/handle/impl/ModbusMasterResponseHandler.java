@@ -72,14 +72,4 @@ public class ModbusMasterResponseHandler
         return this.processor.processResponseFrame(channel, unitId, reqFunc, respFunc);
     }
 
-    @Override
-    protected void messageReceived(ChannelHandlerContext channelHandlerContext, ModbusFrame modbusFrame) throws Exception {
-
-    }
 }
-
-
-/* Location:              D:\logs\easymodbus4j-extension-0.0.5.jar!\com\github\zengfr\easymodbus4j\handle\impl\ModbusMasterResponseHandler.class
- * Java compiler version: 5 (49.0)
- * JD-Core Version:       1.1.2
- */

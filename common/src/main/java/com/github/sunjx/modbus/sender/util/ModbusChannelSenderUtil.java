@@ -43,6 +43,7 @@ public class ModbusChannelSenderUtil {
     }
 
 
+    // *
     public static int sendAsyncFunc(ChannelSender sender, String func, int address, int value) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
         Method method = channelSenderClazz.getMethod(func, new Class[]{int.class, int.class});
         return ((Integer) method.invoke(sender, new Object[]{Integer.valueOf(address), Integer.valueOf(value)})).intValue();

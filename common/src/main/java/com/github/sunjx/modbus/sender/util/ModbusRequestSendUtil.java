@@ -114,13 +114,16 @@ public class ModbusRequestSendUtil {
                     String[] args = str.split("[;|]");
                     /*  96 */
                     if (args.length >= 3) {
-                        /*  97 */
+                        // todo
+                        // readHoldingRegistersAsync
                         String funcString = args[0];
-                        /*  98 */
+
+                        // 1026 寄存器地址
                         String addressString = args[1];
-                        /*  99 */
+
+                        // 1 类型
                         String value = args[2];
-                        /* 100 */
+
                         if (isAllUseAsync && !funcString.endsWith("Async")) {
                             /* 101 */
                             funcString = funcString + "Async";
@@ -196,7 +199,7 @@ public class ModbusRequestSendUtil {
                 }
 
             } else {
-                /* 139 */
+                // 目前使用这个方法
                 respFunction = ModbusChannelSenderUtil.sendSyncFunc(sender, funcString, address.intValue(), Integer.valueOf(value).intValue());
 
             }
