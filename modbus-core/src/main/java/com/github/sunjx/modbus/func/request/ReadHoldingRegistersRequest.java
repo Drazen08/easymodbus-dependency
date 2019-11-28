@@ -30,6 +30,7 @@ public class ReadHoldingRegistersRequest
 
 
     /* 44 */
+    @Override
     public String toString() {
         return "ReadHoldingRegistersRequest{startingAddress=" + this.address + ", quantityOfInputRegisters=" + this.value + '}';
     }

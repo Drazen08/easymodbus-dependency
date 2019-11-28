@@ -61,8 +61,8 @@ public class ModbusSetup {
 		InternalLoggerFactory.setDefaultFactory(Slf4JLoggerFactory.INSTANCE);
 		System.setProperty("io.netty.tryReflectionSetAccessible", "true");
 		// System.setProperty("io.netty.noUnsafe", "false");
-		// ReferenceCountUtil.release(byteBuf);
-		// ResourceLeakDetector.setLevel(ResourceLeakDetector.Level.ADVANCED);
+		//		// ReferenceCountUtil.release(byteBuf);
+		//		// ResourceLeakDetector.setLevel(ResourceLeakDetector.Level.ADVANCED);
 	}
 
 	public void initHandler(ModbusResponseHandler responseHandler, ModbusRequestHandler requestHandler) throws Exception {

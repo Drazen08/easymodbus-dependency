@@ -24,8 +24,3 @@ public abstract class ModbusFunction {
     public abstract void decode(ByteBuf paramByteBuf);
 }
 
-
-/* Location:              D:\logs\easymodbus4j-core-0.0.5.jar!\com\github\zengfr\easymodbus4j\protocol\ModbusFunction.class
- * Java compiler version: 8 (52.0)
- * JD-Core Version:       1.1.2
- */

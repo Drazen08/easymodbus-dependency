@@ -13,6 +13,7 @@ public class ModbusFrame {
         this.header = header;
         this.function = function;
     }
+
     public ModbusHeader getHeader() {
         return this.header;
     }
@@ -21,6 +22,7 @@ public class ModbusFrame {
         return this.function;
     }
 
+    // 组装modbus 数据包
     public ByteBuf encode() {
         ByteBuf buf = Unpooled.buffer();
         buf.writeBytes(this.header.encode());

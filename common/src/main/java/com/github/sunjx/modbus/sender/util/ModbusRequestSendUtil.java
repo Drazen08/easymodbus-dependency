@@ -23,19 +23,16 @@ public class ModbusRequestSendUtil {
     }
 
 
-    /*  42 */   private static final InternalLogger log = InternalLoggerFactory.getInstance(ModbusRequestSendUtil.class);
+    private static final InternalLogger log = InternalLoggerFactory.getInstance(ModbusRequestSendUtil.class);
 
 
     public static void sendRequests(Collection<Channel> channels, List<String> reqs, boolean isAllUseAsync, int fixedDelay, PriorityStrategy strategy) {
-        /*  45 */
         switch (strategy) {
 
             case Channel:
-                /*  47 */
                 sendRequestsByChannelFirst(channels, reqs, isAllUseAsync, fixedDelay);
 
             case Req:
-                /*  49 */
                 sendRequestsByReqFirst(channels, reqs, isAllUseAsync, fixedDelay);
 
                 break;
@@ -46,50 +43,37 @@ public class ModbusRequestSendUtil {
 
 
     private static void sendRequestsByChannelFirst(Collection<Channel> channels, List<String> reqs, boolean isAllUseAsync, int fixedDelay) {
-        /*  55 */
         for (Channel channel : channels) {
-            /*  56 */
             if (channel == null || !channel.isActive() || !channel.isOpen() || !channel.isWritable()) {
                 continue;
             }
-            /*  58 */
             ChannelSender sender = ChannelSenderFactory.getInstance().get(channel);
-            /*  59 */
             for (String str : reqs) {
-
                 try {
-                    /*  61 */
                     long startTime = System.currentTimeMillis();
-                    /*  62 */
                     String[] args = str.split("[;|]");
-                    /*  63 */
                     if (args.length >= 3) {
-                        /*  64 */
                         String funcString = args[0];
-                        /*  65 */
+                        // 寄存器地址起
                         String addressString = args[1];
-                        /*  66 */
-                        String value = args[2];
-                        /*  67 */
-                        if (isAllUseAsync && !funcString.endsWith("Async")) {
-                            /*  68 */
-                            funcString = funcString + "Async";
 
+                        String value = args[2];
+
+                        if (isAllUseAsync && !funcString.endsWith("Async")) {
+                            funcString = funcString + "Async";
                         }
-                        /*  70 */
+
                         if (!funcString.endsWith("Async")) {
                             /*  71 */
                             sendSyncFunc(sender, funcString, addressString, value);
 
                         } else {
-                            /*  73 */
+                            // 发送消息
                             sendAsyncFunc(sender, funcString, addressString, value);
-                            /*  74 */
                         }
                         long endTime = System.currentTimeMillis();
-                        /*  75 */
                         long span = endTime - startTime;
-                        /*  76 */
+                        // 666
                         if (fixedDelay - span > 0L) {
                             /*  77 */
                             Thread.sleep(fixedDelay - span);
