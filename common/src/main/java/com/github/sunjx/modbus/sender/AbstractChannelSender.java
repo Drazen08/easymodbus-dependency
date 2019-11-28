@@ -63,9 +63,9 @@ public abstract class AbstractChannelSender {
     }
 
     protected ModbusHeader buildModbusHeader(ModbusFunction function) {
-
+        // requestid
         int transactionId = ModbusTransactionIdUtil.calculateTransactionId();
-        /*  76 */
+        // 5
         int pduLength = function.calculateLength();
         /*  77 */
         ModbusHeader header = new ModbusHeader(transactionId, this.protocolIdentifier, pduLength, this.unitIdentifier);

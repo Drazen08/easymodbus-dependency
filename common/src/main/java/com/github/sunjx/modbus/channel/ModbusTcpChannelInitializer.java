@@ -1,11 +1,11 @@
  package com.github.sunjx.modbus.channel;
 
- import com.github.zengfr.easymodbus4j.codec.ModbusPduCodec;
- import com.github.zengfr.easymodbus4j.codec.ModbusPduReqCodec;
- import com.github.zengfr.easymodbus4j.codec.ModbusPduRespCodec;
- import com.github.zengfr.easymodbus4j.codec.tcp.ModbusTcpCodec;
- import com.github.zengfr.easymodbus4j.codec.tcp.ModbusTcpLFBFrameDecoder;
- import com.github.zengfr.easymodbus4j.protocol.tcp.ModbusFrame;
+ import com.github.sunjx.modbus.codec.ModbusPduCodec;
+ import com.github.sunjx.modbus.codec.ModbusPduReqCodec;
+ import com.github.sunjx.modbus.codec.ModbusPduRespCodec;
+ import com.github.sunjx.modbus.codec.tcp.ModbusTcpCodec;
+ import com.github.sunjx.modbus.codec.tcp.ModbusTcpLFBFrameDecoder;
+ import com.github.sunjx.modbus.protocol.tcp.ModbusFrame;
  import io.netty.channel.ChannelHandler;
  import io.netty.channel.ChannelHandler.Sharable;
  import io.netty.channel.ChannelPipeline;

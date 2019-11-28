@@ -1,4 +1,4 @@
- package com.github.zengfr.easymodbus4j.relay;
+ package com.github.sunjx.modbus.relay;
 
  import io.netty.bootstrap.Bootstrap;
  import io.netty.buffer.ByteBuf;
@@ -33,6 +33,7 @@
    }
 
 
+   @Override
    public void channelActive(ChannelHandlerContext ctx) throws Exception {
 /* 37 */     Bootstrap bootstrap = new Bootstrap();
 /* 38 */     ((Bootstrap)bootstrap.channel(NioSocketChannel.class)).handler((ChannelHandler)new SimpleChannelInboundHandler<ByteBuf>()

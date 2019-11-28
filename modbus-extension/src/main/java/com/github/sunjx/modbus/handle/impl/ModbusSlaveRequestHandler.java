@@ -107,9 +107,6 @@ public class ModbusSlaveRequestHandler
         return this.processor.writeMultipleRegisters(unitIdentifier, request);
     }
 
-    @Override
-    protected void messageReceived(ChannelHandlerContext channelHandlerContext, ModbusFrame modbusFrame) throws Exception {
 
-    }
 }
 

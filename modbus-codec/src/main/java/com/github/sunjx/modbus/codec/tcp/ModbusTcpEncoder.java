@@ -1,42 +1,27 @@
- package com.github.sunjx.modbus.codec.tcp;
+package com.github.sunjx.modbus.codec.tcp;
 
- import com.github.zengfr.easymodbus4j.protocol.tcp.ModbusFrame;
- import io.netty.channel.ChannelHandlerContext;
- import io.netty.channel.ChannelOutboundHandlerAdapter;
- import io.netty.channel.ChannelPromise;
-
-
+import com.github.sunjx.modbus.protocol.tcp.ModbusFrame;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelOutboundHandlerAdapter;
+import io.netty.channel.ChannelPromise;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- public class ModbusTcpEncoder
-   extends ChannelOutboundHandlerAdapter
- {
-   public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
-/* 32 */     if (msg instanceof ModbusFrame) {
-/* 33 */       ModbusFrame frame = (ModbusFrame)msg;
-/* 34 */       ctx.writeAndFlush(frame.encode());
-     } else {
-/* 36 */       ctx.write(msg);
-     }
-   }
- }
+public class ModbusTcpEncoder
+        extends ChannelOutboundHandlerAdapter {
+    @Override
+    public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
+        /* 32 */
+        if (msg instanceof ModbusFrame) {
+            /* 33 */
+            ModbusFrame frame = (ModbusFrame) msg;
+            /* 34 */
+            ctx.writeAndFlush(frame.encode());
+        } else {
+            /* 36 */
+            ctx.write(msg);
+        }
+    }
+}
 
 
 /* Location:              D:\logs\easymodbus4j-codec-0.0.5.jar!\com\github\zengfr\easymodbus4j\codec\tcp\ModbusTcpEncoder.class

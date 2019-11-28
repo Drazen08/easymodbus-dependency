@@ -1,8 +1,8 @@
 package com.github.sunjx.modbus.server;
 
-import com.github.zengfr.easymodbus4j.channel.ModbusTcpChannelInitializer;
-import com.github.zengfr.easymodbus4j.handler.ModbusInboundHandler;
-import com.github.zengfr.easymodbus4j.handler.ModbusResponseHandler;
+import com.github.sunjx.modbus.channel.ModbusTcpChannelInitializer;
+import com.github.sunjx.modbus.handler.ModbusInboundHandler;
+import com.github.sunjx.modbus.handler.ModbusResponseHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.channel.socket.SocketChannel;

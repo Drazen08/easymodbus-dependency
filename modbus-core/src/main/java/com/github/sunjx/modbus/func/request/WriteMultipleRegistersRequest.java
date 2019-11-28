@@ -80,7 +80,8 @@ public ByteBuf encode() {
 /*     */   }
 /*     */ 
 /*     */   
-/*     */   public void decode(ByteBuf data) {
+/*     */   @Override
+public void decode(ByteBuf data) {
 /*  82 */     super.decode(data);
 /*  83 */     this.byteCount = data.readUnsignedByte();
 /*  84 */     this.registers = new int[this.byteCount / 2];
