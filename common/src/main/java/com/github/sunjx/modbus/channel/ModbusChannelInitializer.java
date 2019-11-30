@@ -45,6 +45,7 @@ public abstract class ModbusChannelInitializer extends ChannelInitializer<Socket
         if (ch.localAddress() != null || ch.remoteAddress() != null) {
             log.info(String.format("initChannel->%s,%s", new Object[]{ch.localAddress(), ch.remoteAddress()}));
         }
+        // 注册各handler
         ChannelPipeline pipeline = ch.pipeline();
         initPipeline4Logging(pipeline);
         initPipeline4Ping(pipeline);

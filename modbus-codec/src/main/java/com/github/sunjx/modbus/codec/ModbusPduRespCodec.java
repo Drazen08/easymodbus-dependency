@@ -15,13 +15,9 @@ public class ModbusPduRespCodec
 
 
     public static ModbusFunction decodeFunction(ByteBuf buffer) {
-        /* 36 */
         short functionCode = buffer.readUnsignedByte();
-        /* 37 */
         ModbusFunction function = ModbusFunctionDecoderUtil.decodeRespFunction(functionCode);
-        /* 38 */
         function.decode(buffer);
-        /* 39 */
         return function;
     }
 }

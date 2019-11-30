@@ -59,6 +59,7 @@ public class ReadInputRegistersResponse
     }
 
 
+    @Override
     public void decode(ByteBuf data) {
         /* 74 */
         this.byteCount = data.readUnsignedByte();

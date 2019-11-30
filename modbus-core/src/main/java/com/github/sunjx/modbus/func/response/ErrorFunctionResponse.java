@@ -88,6 +88,7 @@ public class ErrorFunctionResponse
     }
 
 
+    @Override
     public void decode(ByteBuf data) {
         /* 159 */
         this.exceptionCode = data.readUnsignedByte();

@@ -25,7 +25,7 @@ public class ClientDemo implements Runnable {
 
     private final static int port = 502;
 
-    static String channelKey = "BG_A4_WK";
+    final static String channelKey = "BG_A4_WK";
 
     private ClientHandler handler;
 

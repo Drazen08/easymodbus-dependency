@@ -73,15 +73,11 @@ public class ReadHoldingRegistersResponse
     }
 
 
+    @Override
     public void decode(ByteBuf data) {
-        /* 74 */
         this.byteCount = data.readUnsignedByte();
-
-        /* 76 */
         this.registers = new int[this.byteCount / 2];
-        /* 77 */
         for (int i = 0; i < this.registers.length; i++) {
-            /* 78 */
             this.registers[i] = data.readUnsignedShort();
         }
     }

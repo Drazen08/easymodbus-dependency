@@ -13,12 +13,22 @@ import org.slf4j.LoggerFactory;
 
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author sunjx
  */
 @ChannelHandler.Sharable
 public class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
+
+    private static AtomicInteger unit = new AtomicInteger(1);
+
+    public static int getCount() {
+        if (unit.get() >= 65534) {
+            unit.set(1);
+        }
+        return unit.incrementAndGet();
+    }
 
     private String channelKey;
 
@@ -49,6 +59,11 @@ public class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
         ClientDemo.doConnect();
     }
 
+    private void doLog(byte[] buff){
+        log.info("---------------------");
+        log.info("receiveBuffer:[{}]", ByteBufUtil.hexDump(buff));
+    }
+
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Long a = System.currentTimeMillis();
@@ -56,11 +71,12 @@ public class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
         byte[] result = new byte[buf.readableBytes()];
         buf.readBytes(result);
-        System.out.println("length = " + result.length);
-        log.info("收到命令，帧头为:[" + Integer.toHexString((int) result[0]) + "]");
-        // 进行crc8 校验
-        ByteBuffer byteBuffer = ByteBuffer.allocate(result.length - 1);
-        byteBuffer.put(result, 0, result.length - 1);
+        doLog(result);
+//        System.out.println("length = " + result.length);
+//        log.info("收到命令，帧头为:[" + Integer.toHexString((int) result[0]) + "]");
+//        // 进行crc8 校验
+//        ByteBuffer byteBuffer = ByteBuffer.allocate(result.length - 1);
+//        byteBuffer.put(result, 0, result.length - 1);
 //
 //        if (CRC8.calcCrc8(byteBuffer.array()) != result[result.length - 1]) {
 //            log.info("CRC 校验失败:[" + ctx.channel() + "]");
@@ -112,14 +128,15 @@ public class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
      */
     private void startActive(ChannelHandlerContext ctx) {
         ByteBuf buffer = Unpooled.buffer();
-        buffer.writeBytes(("DTU:"+channelKey).getBytes(StandardCharsets.UTF_8));
 
-        int startReaderIndex = buffer.readerIndex();
-
-        int crc = RtuCrcUtil.calculateCRC(buffer);
-        buffer.readerIndex(startReaderIndex);
-        buffer.writeByte((byte) (0xFF & crc >> 8));
-        buffer.writeByte((byte) (0xFF & crc));
+        buffer.writeBytes(("DTU:" + channelKey).getBytes(StandardCharsets.UTF_8));
+        buffer.writeBytes("\0".getBytes());
+//        int startReaderIndex = buffer.readerIndex();
+//
+//        int crc = RtuCrcUtil.calculateCRC(buffer);
+//        buffer.readerIndex(startReaderIndex);
+//        buffer.writeByte((byte) (0xFF & crc >> 8));
+//        buffer.writeByte((byte) (0xFF & crc));
 
         ctx.writeAndFlush(buffer);
     }
