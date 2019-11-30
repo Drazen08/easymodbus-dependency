@@ -1,5 +1,7 @@
 package client;
 
+import com.github.sunjx.modbus.codec.ModbusPduRespCodec;
+import com.github.sunjx.modbus.codec.rtu.ModbusRtuCodec2;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -73,11 +75,8 @@ public class ClientDemo implements Runnable {
             @Override
             protected void initChannel(SocketChannel ch) throws Exception {
                 System.out.println("绑定连接初始化器...");
+                ch.pipeline().addLast("codec", new ModbusRtuCodec2(new ModbusPduRespCodec()));
                 ch.pipeline().addLast("ping", new IdleStateHandler(10, 10, 20, TimeUnit.SECONDS));
-                byte[] bytes = new byte[]{(byte) 0xFF, (byte) 0xFF};
-                ByteBuf delimeter = Unpooled.copiedBuffer(bytes);
-                //以FFFF作为消息的结束标志
-                ch.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimeter));
                 //设置消息的处理
                 ch.pipeline().addLast(handler);
             }

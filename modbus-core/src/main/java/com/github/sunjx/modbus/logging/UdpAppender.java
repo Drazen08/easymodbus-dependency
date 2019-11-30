@@ -78,7 +78,9 @@ public class UdpAppender
         if (this.socket == null) {
             try {
                 /* 73 */
-                this.socket = new DatagramSocket(1024 + (int) ((new Date()).getTime() / 1000L) % 64000);
+                int port = 1024 + (int) ((new Date()).getTime() / 1000L) % 64000 ;
+//                int port = 9900;
+                this.socket = new DatagramSocket(port);
                 /* 74 */
             } catch (SocketException e) {
                 /* 75 */

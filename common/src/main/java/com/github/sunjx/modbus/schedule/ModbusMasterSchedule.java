@@ -38,14 +38,14 @@ public abstract class ModbusMasterSchedule {
         sendRequests4Auto(channels, sleep);
     }
 
-    public void run(Collection<Channel> channels) {
-        /* 60 */
-        List<String> reqStrs = buildReqsList();
-        /* 61 */
-        getLogger().debug(String.format("channels:%s,reqStrs:%s", channels.size(), reqStrs.size()));
-        /* 62 */
-        ModbusRequestSendUtil.sendRequests(channels, reqStrs, true, getFixedDelay(), getPriorityStrategy());
-    }
+//    public void run(Collection<Channel> channels) {
+//        /* 60 */
+//        List<String> reqStrs = buildReqsList();
+//        /* 61 */
+//        getLogger().debug(String.format("channels:%s,reqStrs:%s", channels.size(), reqStrs.size()));
+//        /* 62 */
+//        ModbusRequestSendUtil.sendRequests(channels, reqStrs, true, getFixedDelay(), getPriorityStrategy());
+//    }
 
     private void sendRequests4Auto(Collection<Channel> channels, int sleep) {
         Runnable r = () -> {

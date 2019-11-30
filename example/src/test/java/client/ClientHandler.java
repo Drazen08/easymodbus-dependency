@@ -1,6 +1,7 @@
 package client;
 
 import com.github.sunjx.modbus.common.util.RtuCrcUtil;
+import com.github.sunjx.modbus.protocol.tcp.ModbusFrame;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
@@ -11,7 +12,6 @@ import io.netty.handler.timeout.IdleStateEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author sunjx
  */
 @ChannelHandler.Sharable
-public class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
+public class ClientHandler extends SimpleChannelInboundHandler<ModbusFrame> {
 
     private static AtomicInteger unit = new AtomicInteger(1);
 
@@ -62,54 +62,27 @@ public class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
     private void doLog(byte[] buff){
         log.info("---------------------");
         log.info("receiveBuffer:[{}]", ByteBufUtil.hexDump(buff));
+        log.info("---------------------");
     }
 
-    @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        Long a = System.currentTimeMillis();
-        ByteBuf buf = (ByteBuf) msg;
 
-        byte[] result = new byte[buf.readableBytes()];
-        buf.readBytes(result);
+    /**
+     * <strong>Please keep in mind that this method will be renamed to
+     * {@code messageReceived(ChannelHandlerContext, I)} in 5.0.</strong>
+     * <p>
+     * Is called for each message of type {@link I}.
+     *
+     * @param ctx the {@link ChannelHandlerContext} which this {@link SimpleChannelInboundHandler}
+     *            belongs to
+     * @param msg the message to handle
+     * @throws Exception is thrown if an error occurred
+     */
+    @Override
+    protected void channelRead0(ChannelHandlerContext ctx, ModbusFrame msg) throws Exception {
+        ByteBuf encode = msg.encode();
+        byte[] result = new byte[encode.readableBytes()];
+        encode.readBytes(result);
         doLog(result);
-//        System.out.println("length = " + result.length);
-//        log.info("收到命令，帧头为:[" + Integer.toHexString((int) result[0]) + "]");
-//        // 进行crc8 校验
-//        ByteBuffer byteBuffer = ByteBuffer.allocate(result.length - 1);
-//        byteBuffer.put(result, 0, result.length - 1);
-//
-//        if (CRC8.calcCrc8(byteBuffer.array()) != result[result.length - 1]) {
-//            log.info("CRC 校验失败:[" + ctx.channel() + "]");
-//            return;
-//        } else {
-//            log.info("CRC 校验成功");
-//        }
-
-        switch (result[0]) {
-            case (byte) 0x0011:
-                // 初次连接应答
-                startActiveHandler(ctx, result);
-                break;
-            case (byte) 0x0012:
-                // 心跳应答
-                heartBeatHandler(ctx, result);
-                break;
-            case (byte) 0x0013:
-                // 收到制作指令
-                doorderHandler(ctx, result);
-                break;
-            default:
-                break;
-        }
-        Long b = System.currentTimeMillis();
-        System.out.println("TIME :[" + (b - a) + "]");
-        buf.release();
-    }
-
-    @Override
-    protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) throws Exception {
-        System.out.println("client channelRead..");
-        ByteBuf buf = msg;
     }
 
 
@@ -117,7 +90,6 @@ public class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.printStackTrace();
         System.out.println("error!!!");
-//        ctx.close();
     }
 
     /**

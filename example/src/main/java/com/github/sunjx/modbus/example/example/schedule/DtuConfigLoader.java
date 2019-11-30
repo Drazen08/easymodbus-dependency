@@ -2,6 +2,8 @@ package com.github.sunjx.modbus.example.example.schedule;
 
 import com.github.sunjx.modbus.common.util.FileUtil;
 import com.github.sunjx.modbus.common.util.InputStreamUtil;
+import com.github.sunjx.modbus.example.util.DateUtils;
+import com.github.sunjx.modbus.example.util.StringUtil;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.collect.Lists;
@@ -54,6 +56,7 @@ public class DtuConfigLoader {
         return null;
     }
 
+
     public static List<ModbusDataPointConfig> loadDataPointConfig(String fileName) {
         logger.info("loadDataPointConfig:" + fileName);
         List<ModbusDataPointConfig> dataPointConfigs = Lists.newArrayList();
@@ -71,22 +74,31 @@ public class DtuConfigLoader {
                 for (String line : FileUtil.readLines(input, StandardCharsets.UTF_8)) {
                     if (!line.matches("^\\s*#.*") && !line.matches("^\\s*$")) {
                         String[] strArr = line.split("[\\t;|]");
-                        if (strArr.length < 6) {
+                        if (strArr.length < 3) {
                             logger.warn("点位配置文件格式不正确，文件 %s, 第%d行。", fileName, lineNumber);
                         } else {
+
+//                            pointDto.setDtu(channelKey);
+//                            pointDto.setPointName(pointDto.getDtu() + this.underLine + unitId + this.underLine + req.getStartingAddress());
+//                            pointDto.setPointDesc(pointDto.getPointName());
+//                            pointDto.setTime(DateUtils.getDateTime());
+//                            pointDto.setValue(StringUtil.toString(resp.getRegisters()[0]));
+
                             ModbusDataPointConfig dpConfig = new ModbusDataPointConfig();
-                            dpConfig.dataPointName = strArr[0];
-                            dpConfig.unitId = Integer.valueOf(strArr[1]).byteValue();
-                            dpConfig.functionCode = Integer.valueOf(strArr[2]).shortValue();
-                            dpConfig.regAddr = Integer.valueOf(strArr[3]).shortValue();
-                            dpConfig.regCount = Integer.valueOf(strArr[4]).shortValue();
-                            dpConfig.dataType = strArr[5].toLowerCase();
-                            if (strArr.length > 6) {
-                                dpConfig.scale = Float.valueOf(strArr[6]);
-                            }
-                            if (strArr.length > 7) {
-                                dpConfig.offset = Float.valueOf(strArr[7]);
-                            }
+
+
+//                            dpConfig.dataPointName = strArr[0];
+//                            dpConfig.unitId = Integer.valueOf(strArr[1]).byteValue();
+                            dpConfig.functionCode = 3;
+                            dpConfig.regAddr = Integer.valueOf(strArr[1]).shortValue();
+                            dpConfig.regCount = Integer.valueOf(strArr[2]).shortValue();
+//                            dpConfig.dataType = strArr[5].toLowerCase();
+//                            if (strArr.length > 6) {
+//                                dpConfig.scale = Float.valueOf(strArr[6]);
+//                            }
+//                            if (strArr.length > 7) {
+//                                dpConfig.offset = Float.valueOf(strArr[7]);
+//                            }
 
                             dataPointConfigs.add(dpConfig);
                         }
