@@ -27,31 +27,19 @@ public class ModbusRtuCodec2
 
     @Override
     protected void encode(ChannelHandlerContext ctx, ModbusFrame msg, ByteBuf out) throws Exception {
-        /* 46 */
         log.debug("encode:" + ctx.channel().remoteAddress());
-        /* 47 */
         ByteBuf sendBuf = ctx.alloc().heapBuffer(1 + msg.getHeader().getLength() - 1 + 2);
-        /* 48 */
         sendBuf.writeByte(msg.getHeader().getUnitIdentifier());
-        /* 49 */
         sendBuf.writeBytes(msg.getFunction().encode());
-        /* 50 */
         writeRtuCRC(sendBuf);
-
-        /* 52 */
         ctx.writeAndFlush(sendBuf);
     }
 
     private void writeRtuCRC(ByteBuf buffer) {
-        /* 56 */
         int startReaderIndex = buffer.readerIndex();
-        /* 57 */
         int crc = RtuCrcUtil.calculateCRC(buffer);
-        /* 58 */
         buffer.readerIndex(startReaderIndex);
-        /* 59 */
         buffer.writeByte((byte) (0xFF & crc >> 8));
-        /* 60 */
         buffer.writeByte((byte) (0xFF & crc));
     }
 

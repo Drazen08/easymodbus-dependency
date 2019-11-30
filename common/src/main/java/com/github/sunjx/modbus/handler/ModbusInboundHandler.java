@@ -17,10 +17,6 @@ public abstract class ModbusInboundHandler extends SimpleChannelInboundHandler<M
     private static final InternalLogger log = InternalLoggerFactory.getInstance(ModbusInboundHandler.class);
     private ChannelManager channelManager;
 
-    static {
-        log.info("https://github.com/zengfr/easymodbus4j");
-    }
-
 
     /* 44 */
     public void setChannelManager(ChannelManager channelManager) {

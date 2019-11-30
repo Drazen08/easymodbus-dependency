@@ -23,6 +23,7 @@ public class DtuRegDecoder extends MessageToMessageDecoder<ByteBuf> {
         }
     }
 
+    @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
         in.retain();
 

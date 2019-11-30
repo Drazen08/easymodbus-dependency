@@ -34,14 +34,19 @@ public class ModbusRequestSendUtil {
 
             case Req:
                 sendRequestsByReqFirst(channels, reqs, isAllUseAsync, fixedDelay);
-
                 break;
 
         }
 
     }
 
-
+    /**
+     * todo
+     * @param channels
+     * @param reqs
+     * @param isAllUseAsync
+     * @param fixedDelay
+     */
     private static void sendRequestsByChannelFirst(Collection<Channel> channels, List<String> reqs, boolean isAllUseAsync, int fixedDelay) {
         for (Channel channel : channels) {
             if (channel == null || !channel.isActive() || !channel.isOpen() || !channel.isWritable()) {

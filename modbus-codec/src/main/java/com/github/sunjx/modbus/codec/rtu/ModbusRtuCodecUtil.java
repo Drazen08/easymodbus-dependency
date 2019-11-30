@@ -9,59 +9,50 @@ public class ModbusRtuCodecUtil {
     private static final int FunctionFieldIndex = 1;
     private static final int LengthFieldIndex = 2;
 
-    /* 35 */
+    public ModbusRtuCodecUtil() {
+    }
+
     public static int getMessageMinSize() {
         return 5;
     }
 
-
-    /* 38 */
     private static int getLength(ByteBuf in, int startIndex) {
         return in.getUnsignedByte(startIndex + 2);
     }
 
-
-    /* 42 */
     private static short getFunctionCode(ByteBuf in, int startIndex) {
         return in.getUnsignedByte(startIndex + 1);
     }
 
-
     public static int getMessageLength(ByteBuf in, int startIndex) {
-        int length;
-        /* 47 */
         short functionCode = getFunctionCode(in, startIndex);
-
-        /* 49 */
         if (ModbusFunctionUtil.isError(functionCode)) {
-            /* 51 */
             return 5;
+        } else {
+            switch(functionCode) {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    int length = getLength(in, startIndex);
+                    return 3 + length + 2;
+                case 5:
+                case 6:
+                case 15:
+                case 16:
+                    return 8;
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                case 13:
+                case 14:
+                default:
+                    return 0;
+            }
         }
-        /* 53 */
-        switch (functionCode) {
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-                /* 58 */
-                length = getLength(in, startIndex);
-
-                /* 60 */
-                return 3 + length + 2;
-
-            case 5:
-            case 6:
-            case 15:
-            case 16:
-                /* 66 */
-                return 8;
-        }
-
-
-
-
-        /* 72 */
-        return 0;
     }
 }
 

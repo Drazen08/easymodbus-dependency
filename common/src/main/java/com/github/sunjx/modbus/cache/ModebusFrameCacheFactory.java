@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ModebusFrameCacheFactory {
     private static class ModebusFrameCacheFactoryHolder {
-        /* 31 */     private static final ModebusFrameCacheFactory INSTANCE = new ModebusFrameCacheFactory();
+        private static final ModebusFrameCacheFactory INSTANCE = new ModebusFrameCacheFactory();
     }
 
     /* 34 */   protected static final InternalLogger log = InternalLoggerFactory.getInstance(ModebusFrameCacheFactory.class);

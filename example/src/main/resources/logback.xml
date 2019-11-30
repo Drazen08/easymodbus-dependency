@@ -14,7 +14,7 @@
 		</encoder>
 	</appender>
 	<appender name="upd"
-		class="com.github.zengfr.easymodbus4j.logging.UdpAppender">
+		class="com.github.sunjx.modbus.logging.UdpAppender">
 		<!--encoder> <pattern>%d{HH:mm:ss.SSS}|%-5level|%thread|%logger{64}-%msg%n</pattern> 
 			</encoder -->
 		<encoder
@@ -144,7 +144,7 @@
 		<appender-ref ref="asycfile4info" />
 		<appender-ref ref="asycfile4debug" />
 	</root>
-	<logger name="com.github.zengfr.easymodbus4j" level="DEBUG" />
+	<logger name="com.github.sunjx.modbus" level="DEBUG" />
 	<logger name="io.netty.handler.logging.LoggingHandler"
 		level="DEBUG" />
 	<logger name="io.netty.util" level="DEBUG" />

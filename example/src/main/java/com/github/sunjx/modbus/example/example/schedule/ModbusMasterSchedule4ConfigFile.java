@@ -48,7 +48,7 @@ public class ModbusMasterSchedule4ConfigFile extends ModbusMasterSchedule {
     protected static String configFileName = "autoSend.txt";
 
     protected static List<String> parseReqs(String fileName) {
-        List<String> configStrings = readConfig(fileName);
+        List<String> configStrings = readConfig("/" + fileName);
         List<String> reqStrings = parseReqs(configStrings);
         return reqStrings;
     }

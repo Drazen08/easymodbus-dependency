@@ -42,7 +42,7 @@ public class ExampleModbusMasterResponseProcessor extends AbstractModbusProcesso
     }
 
     @Override
-    public boolean processResponseFrame(Channel channel, int unitId, AbstractRequest reqFunc, ModbusFunction respFunc) {
+    public boolean  processResponseFrame(Channel channel, int unitId, AbstractRequest reqFunc, ModbusFunction respFunc) {
         String dtuName = (String) channel.attr(AttributeKey.valueOf("DtuName")).get();
         boolean success = this.isRequestResponseMatch(reqFunc, respFunc);
 

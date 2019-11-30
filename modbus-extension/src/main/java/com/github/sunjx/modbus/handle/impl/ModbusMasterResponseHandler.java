@@ -13,21 +13,18 @@ import io.netty.channel.ChannelHandlerContext;
 
 
 @Sharable
-public class ModbusMasterResponseHandler
-        extends ModbusResponseHandler {
-    /* 35 */   private static final ChannelLogger log = ChannelLogger.getLogger(ModbusMasterResponseHandler.class);
+public class ModbusMasterResponseHandler extends ModbusResponseHandler {
+    private static final ChannelLogger log = ChannelLogger.getLogger(ModbusMasterResponseHandler.class);
 
     private ModbusMasterResponseProcessor processor;
 
-    /* 39 */
+
     public short getTransactionIdentifierOffset() {
         return this.processor.getTransactionIdentifierOffset();
     }
 
     public ModbusMasterResponseHandler(ModbusMasterResponseProcessor processor) {
-        /* 42 */
         super(true);
-        /* 43 */
         this.processor = processor;
     }
 
@@ -65,8 +62,6 @@ public class ModbusMasterResponseHandler
         return super.getResponseCache(respTransactionIdentifier, funcCode);
     }
 
-
-    /* 71 */
     @Override
     protected boolean processResponseFrame(Channel channel, int unitId, AbstractRequest reqFunc, ModbusFunction respFunc) {
         return this.processor.processResponseFrame(channel, unitId, reqFunc, respFunc);

@@ -8,9 +8,12 @@ import com.github.sunjx.modbus.example.example.ModbusConsoleApp;
  */
 public class Example {
 	public static void main(String[] args) throws Exception {
+		String [] arg = "6,127.0.0.1,502,1,0,T,0,T,12000,heartbeat,0,54321".split(",");
 		if (args == null || args.length <= 0)
 			args = new String[] { "" };
+
+
 		String[] argsArray = args[0].split("[,;|]");
-		ModbusConsoleApp.initAndStart(argsArray);
+		ModbusConsoleApp.initAndStart(arg);
 	}
 }

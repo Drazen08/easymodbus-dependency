@@ -18,9 +18,9 @@ import io.netty.util.AttributeKey;
 
 public abstract class ModbusResponseHandler
         extends ModbusInboundHandler {
-    /*  41 */   private static final ChannelLogger log = ChannelLogger.getLogger(ModbusResponseHandler.class);
+    private static final ChannelLogger log = ChannelLogger.getLogger(ModbusResponseHandler.class);
     private boolean isCacheResponse = false;
-    /*  43 */   private int responseFrameIgnoreLengthThreshold = 0;
+    private int responseFrameIgnoreLengthThreshold = 0;
 
 
     /*  46 */
@@ -30,44 +30,30 @@ public abstract class ModbusResponseHandler
 
 
     public ModbusResponseHandler(boolean isCacheResponse, int responseFrameIgnoreLengthThreshold) {
-        /*  50 */
         this.isCacheResponse = isCacheResponse;
-        /*  51 */
         this.responseFrameIgnoreLengthThreshold = responseFrameIgnoreLengthThreshold;
     }
 
 
+    @Override
     protected void channelRead0(ChannelHandlerContext ctx, ModbusFrame response) throws Exception {
-        /*  56 */
         log.debug(ctx.channel(), "channelRead0", new Object[0]);
-        /*  57 */
-        cacheResponse(response);
-        /*  58 */
-        boolean isFrameIgnored = isFrameIgnored(response);
-
-        /*  60 */
+        this.cacheResponse(response);
+        boolean isFrameIgnored = this.isFrameIgnored(response);
         AttributeKey<Boolean> key = AttributeKey.valueOf("isFrameIgnored");
-        /*  61 */
         Attribute<Boolean> attr = ctx.channel().attr(key);
-        /*  62 */
-        attr.set(Boolean.valueOf(isFrameIgnored));
-
-        /*  64 */
+        attr.set(isFrameIgnored);
         if (!isFrameIgnored) {
-            /*  65 */
-            boolean success = processResponseFrame(ctx.channel(), response);
-            /*  66 */
+            boolean success = this.processResponseFrame(ctx.channel(), response);
             if (success) {
-                /*  67 */
-                ctx.fireUserEventTriggered(new SyncStateEvent(Short.valueOf(response.getFunction().getFunctionCode()), true, false));
+                ctx.fireUserEventTriggered(new SyncStateEvent(response.getFunction().getFunctionCode(), true, false));
             } else {
-                /*  69 */
                 log.debug(ctx.channel(), "success:" + success, new Object[0]);
             }
         } else {
-            /*  72 */
             log.debug(ctx.channel(), "isFrameIgnored:" + isFrameIgnored, new Object[0]);
         }
+
     }
 
     protected boolean isFrameIgnored(ModbusFrame response) {
@@ -78,58 +64,36 @@ public abstract class ModbusResponseHandler
     }
 
     protected void cacheResponse(ModbusFrame response) {
-        /*  82 */
         if (this.isCacheResponse && response != null) {
-            /*  83 */
-            Short funcCode = Short.valueOf(response.getFunction().getFunctionCode());
-            /*  84 */
+            Short funcCode = response.getFunction().getFunctionCode();
             int respTransactionIdentifier = response.getHeader().getTransactionIdentifier();
-            /*  85 */
-            ModebusFrameCacheFactory.getInstance().getResponseCache(funcCode).put(Integer.valueOf(respTransactionIdentifier), response);
+            ModebusFrameCacheFactory.getInstance().getResponseCache(funcCode).put(respTransactionIdentifier, response);
         }
     }
 
     protected boolean processResponseFrame(Channel channel, ModbusFrame respFrame) {
-        /*  90 */
         boolean success = false;
-        /*  91 */
         int respTransactionIdentifier = respFrame.getHeader().getTransactionIdentifier();
-        /*  92 */
         int reqTransactionIdentifier = getReqTransactionIdByRespTransactionId(respTransactionIdentifier);
-        /*  93 */
         if (respTransactionIdentifier < 0 || reqTransactionIdentifier < 0) {
-            /*  94 */
             respTransactionIdentifier = reqTransactionIdentifier = ModbusTransactionIdUtil.getTransactionIdByRemote(channel);
         }
-        /*  96 */
         short funcCode = respFrame.getFunction().getFunctionCode();
-        /*  97 */
         ModbusFrame reqFrame = getRequestCache(reqTransactionIdentifier, funcCode);
-        /*  98 */
         AbstractRequest reqFunc = null;
-        /*  99 */
         if (reqFrame != null) {
-            /* 100 */
             reqFunc = (AbstractRequest) reqFrame.getFunction();
         } else {
-            /* 102 */
             log.warn(channel, String.format("req is null:%s;%s;%s;%s", new Object[]{Integer.valueOf(reqTransactionIdentifier), Integer.valueOf(respTransactionIdentifier), getRequestCache(funcCode).keySet(), respFrame}), new Object[0]);
         }
-        /* 104 */
         short unitId = respFrame.getHeader().getUnitIdentifier();
-        /* 105 */
         ModbusFunction respFunc = respFrame.getFunction();
-        /* 106 */
         if (reqFrame == null || reqFrame.getHeader().getUnitIdentifier() == unitId) {
-            /* 107 */
             success = processResponseFrame(channel, unitId, reqFunc, respFunc);
-            /* 108 */
             if (success) {
-                /* 109 */
                 removeRequestCache(reqTransactionIdentifier, funcCode);
             }
         }
-        /* 112 */
         return success;
     }
 
@@ -162,21 +126,15 @@ public abstract class ModbusResponseHandler
 
     public ModbusFrame getResponseCache(int respTransactionIdentifier, short funcCode) throws Exception {
         ModbusFrame frame;
-        /* 134 */
-        long timeoutTime = System.currentTimeMillis() + ModbusConfs.SYNC_RESPONSE_TIMEOUT;
-
-        /* 136 */
+        long timeoutTime = System.currentTimeMillis() + (long)ModbusConfs.SYNC_RESPONSE_TIMEOUT;
         ModebusFrameCache responseCache = getResponseCache(funcCode);
         do {
-            /* 138 */
             frame = responseCache.get(Integer.valueOf(respTransactionIdentifier));
-            /* 139 */
             if (frame != null) {
                 continue;
             }
             Thread.sleep(22L);
-        }
-        /* 142 */     while (frame == null && timeoutTime - System.currentTimeMillis() > 0L);
+        } while (frame == null && timeoutTime - System.currentTimeMillis() > 0L);
         /* 143 */
         long size = responseCache.size();
         /* 144 */
@@ -185,12 +143,9 @@ public abstract class ModbusResponseHandler
             responseCache.remove(Integer.valueOf(respTransactionIdentifier));
         }
         /* 147 */
-        if (frame == null)
-            /* 148 */
+        if (frame == null) {
             throw new Exception(String.format("resp is null!(%s,%s,%s,%s)", new Object[]{Integer.valueOf(ModbusConfs.SYNC_RESPONSE_TIMEOUT), Integer.valueOf(respTransactionIdentifier), Long.valueOf(size), responseCache.keySet()}));
-        /* 149 */
-        if (frame.getFunction() instanceof ErrorFunctionResponse) {
-            /* 150 */
+        } else if (frame.getFunction() instanceof ErrorFunctionResponse) {
             throw new Exception("" + ((ErrorFunctionResponse) frame.getFunction()).getExceptionMessage());
         }
         /* 152 */
@@ -201,9 +156,3 @@ public abstract class ModbusResponseHandler
 
     protected abstract boolean processResponseFrame(Channel paramChannel, int paramInt, AbstractRequest paramAbstractRequest, ModbusFunction paramModbusFunction);
 }
-
-
-/* Location:              D:\logs\easymodbus4j-0.0.5.jar!\com\github\zengfr\easymodbus4j\com.github.sunjx.modbus.handler\ModbusResponseHandler.class
- * Java compiler version: 8 (52.0)
- * JD-Core Version:       1.1.2
- */

@@ -7,7 +7,6 @@ import io.netty.buffer.ByteBuf;
 
 public class ModbusPduReqCodec
         extends ModbusPduCodec {
-    /* 31 */
     @Override
     public ModbusFunction decode(ByteBuf buffer) {
         return decodeFunction(buffer);
