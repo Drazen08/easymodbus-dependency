@@ -30,6 +30,7 @@ import io.netty.util.AttributeKey;
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
@@ -47,8 +48,9 @@ public class ModbusMasterSchedule4ConfigFile extends ModbusMasterSchedule {
 
     protected static String configFileName = "autoSend.txt";
 
+
     protected static List<String> parseReqs(String fileName) {
-        List<String> configStrings = readConfig("/" + fileName);
+        List<String> configStrings = readConfig(fileName);
         List<String> reqStrings = parseReqs(configStrings);
         return reqStrings;
     }
@@ -80,50 +82,6 @@ public class ModbusMasterSchedule4ConfigFile extends ModbusMasterSchedule {
         return strList;
     }
 
-    private static String getFunctionStringByCode(short functionCode){
-        switch (functionCode){
-            case 1:
-                return "readCoils";
-            case 2:
-                return "readDiscreteInputs";
-            case 3:
-                return "readHoldingRegisters";
-            case 4:
-                return "readInputRegisters";
-            case 5:
-                return "writeSingleCoil";
-            case 6:
-                return "writeSingleRegister";
-            case 15:
-                return "writeMultipleCoils";
-            case 16:
-                return "writeMultipleRegisters";
-
-        }
-        return "";
-    }
-
-    private static void sendRequestsByChannel(Channel channel, List<ModbusDataPointConfig> reqs, boolean isAllUseAsync, int fixedDelay) {
-        ChannelSender sender = ChannelSenderFactory.getInstance().get(channel);
-        for (ModbusDataPointConfig dpConfig : reqs) {
-            try {
-                long startTime = System.currentTimeMillis();
-
-                String funcString = getFunctionStringByCode(dpConfig.functionCode)+"Async";
-
-                ModbusRequestSendUtil.sendAsyncFunc(sender, funcString, String.valueOf(dpConfig.regAddr), String.valueOf(dpConfig.regCount));
-
-                long span = System.currentTimeMillis() - startTime;
-                if (fixedDelay - span > 0L) {
-                    Thread.sleep(fixedDelay - span);
-                }
-
-            } catch (InvocationTargetException | IllegalAccessException | IllegalArgumentException | SecurityException | InterruptedException | NoSuchMethodException ex) {
-                logger.error("sendRequestsByChannel", ex);
-            }
-        }
-
-    }
 
     @Override
     protected int getFixedDelay() {
@@ -137,7 +95,6 @@ public class ModbusMasterSchedule4ConfigFile extends ModbusMasterSchedule {
 
     @Override
     protected InternalLogger getLogger() {
-
         return logger;
     }
 
@@ -146,39 +103,87 @@ public class ModbusMasterSchedule4ConfigFile extends ModbusMasterSchedule {
         return parseReqs("/" + configFileName);
     }
 
-    @Override
-    public void schedule(Collection<Channel> channels, int sleep) {
-        this.getLogger().debug(String.format("schedule->channels:%s,sleep:%s ms", channels.size(), sleep));
-        this.sendRequests4Auto(channels, sleep);
-    }
+//    @Override
+//    public void schedule(Collection<Channel> channels, int sleep) {
+//        this.getLogger().debug(String.format("schedule->channels:%s,sleep:%s ms", channels.size(), sleep));
+//        this.sendRequests4Auto(channels, sleep);
+//    }
+//
+//    //
+//    private void sendRequests4Auto(Collection<Channel> channels, int sleep) {
+//        Runnable r = () -> {
+//            try {
+//                this.getLogger().debug(String.format("channels:%s, sleep:%s ms", channels.size(), sleep));
+//                for (Channel channel : channels) {
+//                    if (channel == null || !channel.isActive() || !channel.isOpen() || !channel.isWritable()) {
+//                        continue;
+//                    }
+//                    String dtuName = (String) channel.attr(AttributeKey.valueOf("DtuName")).get();
+//                    if (dtuName == null) {
+//                        continue;
+//                    }
+//                    List<ModbusDataPointConfig> dpConfigs = DtuConfigLoader.getInstance().loadDtuConfig(dtuName);
+//                    if (dpConfigs.size() == 0) {
+//                        continue;
+//                    }
+//
+//                    sendRequestsByChannel(channel, dpConfigs, true, sleep);
+//
+//                }
+//            } catch (Exception ex) {
+//                this.getLogger().error(ex);
+//            }
+//
+//        };
+//        ScheduledUtil.scheduleWithFixedDelay(r, (long) sleep);
+//    }
 
-    private void sendRequests4Auto(Collection<Channel> channels, int sleep) {
-        Runnable r = () -> {
-            try {
-                this.getLogger().debug(String.format("channels:%s, sleep:%s ms", channels.size(), sleep));
-                for (Channel channel : channels) {
-                    if (channel == null || !channel.isActive() || !channel.isOpen() || !channel.isWritable()) {
-                        continue;
-                    }
-                    String dtuName = (String) channel.attr(AttributeKey.valueOf("DtuName")).get();
-                    if (dtuName == null) {
-                        continue;
-                    }
-                    List<ModbusDataPointConfig> dpConfigs = DtuConfigLoader.getInstance().loadDtuConfig(dtuName);
-                    if (dpConfigs.size() == 0) {
-                        continue;
-                    }
+//
+//    private static void sendRequestsByChannel(Channel channel, List<ModbusDataPointConfig> reqs, boolean isAllUseAsync, int fixedDelay) {
+//        ChannelSender sender = ChannelSenderFactory.getInstance().get(channel);
+//        for (ModbusDataPointConfig dpConfig : reqs) {
+//            try {
+//                long startTime = System.currentTimeMillis();
+//
+//                String funcString = getFunctionStringByCode(dpConfig.functionCode) + "Async";
+//
+//                ModbusRequestSendUtil.sendAsyncFunc(sender, funcString, String.valueOf(dpConfig.regAddr), String.valueOf(dpConfig.regCount));
+//
+//                long span = System.currentTimeMillis() - startTime;
+//                if (fixedDelay - span > 0L) {
+//                    Thread.sleep(fixedDelay - span);
+//                }
+//
+//            } catch (InvocationTargetException | IllegalAccessException | IllegalArgumentException | SecurityException | InterruptedException | NoSuchMethodException ex) {
+//                logger.error("sendRequestsByChannel", ex);
+//            }
+//        }
+//
+//    }
 
-                    sendRequestsByChannel(channel, dpConfigs, true, sleep);
-
-                }
-            } catch (Exception ex) {
-                this.getLogger().error(ex);
-            }
-
-        };
-        ScheduledUtil.scheduleWithFixedDelay(r, (long) sleep);
-    }
-
+//
+//    private static String getFunctionStringByCode(short functionCode) {
+//        switch (functionCode) {
+//            case 1:
+//                return "readCoils";
+//            case 2:
+//                return "readDiscreteInputs";
+//            case 3:
+//                return "readHoldingRegisters";
+//            case 4:
+//                return "readInputRegisters";
+//            case 5:
+//                return "writeSingleCoil";
+//            case 6:
+//                return "writeSingleRegister";
+//            case 15:
+//                return "writeMultipleCoils";
+//            case 16:
+//                return "writeMultipleRegisters";
+//            default:
+//                break;
+//        }
+//        return "";
+//    }
 
 }

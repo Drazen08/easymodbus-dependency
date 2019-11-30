@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb4e22f0-271f-4a75-83b6-0f1ce1ffd319" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusMasterResponseProcessor_BAK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/main/resources/BG_A4_WK.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/channel/ModbusChannelInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/channel/ModbusChannelInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/test/java/client/ClientDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/test/java/client/ClientDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ModbusPduCodec.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ModbusPduCodec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ModbusPduReqCodec.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ModbusPduReqCodec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ModbusPduRespCodec.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ModbusPduRespCodec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/rtu/ModbusRtuCodec2.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/rtu/ModbusRtuCodec2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/response/ErrorFunctionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/response/ErrorFunctionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/response/ReadHoldingRegistersResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/response/ReadHoldingRegistersResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/response/ReadInputRegistersResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/response/ReadInputRegistersResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/protocol/ModbusFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/protocol/ModbusFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/schedule/ModbusMasterSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/schedule/ModbusMasterSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/AbstractChannelSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/AbstractChannelSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/ChannelAsyncSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/ChannelAsyncSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/util/ModbusChannelSenderUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/util/ModbusChannelSenderUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/util/ModbusRequestSendUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/util/ModbusRequestSendUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusMasterResponseProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusMasterResponseProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/main/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/main/Example.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/resources/autoSend.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/resources/autoSend.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/util/ModbusFunctionDecoderUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/util/ModbusFunctionDecoderUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/InputStreamUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/InputStreamUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/request/ReadHoldingRegistersRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/request/ReadHoldingRegistersRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modbus-extension/src/main/java/com/github/sunjx/modbus/processor/AbstractModbusProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-extension/src/main/java/com/github/sunjx/modbus/processor/AbstractModbusProcessor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,31 +36,39 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/channel/ModbusChannelInitializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-627">
-              <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+            <state relative-caret-position="127">
+              <caret line="72" column="60" selection-start-line="72" selection-start-column="60" selection-end-line="72" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusDataPointConfig.java">
+        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/main/Example.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state relative-caret-position="211">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,17 +76,48 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="169" column="21" lean-forward="true" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+              <folding>
+                <element signature="e#5331#5332#0" expanded="true" />
+                <element signature="e#5360#5361#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/channel/DtuRegDecoder.java">
+        <entry file="file://$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/server/ModbusServer4RtuMaster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            <state relative-caret-position="129">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/server/CustomableModbusServer4RtuMaster.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/ModbusSetup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="100" selection-start-line="100" selection-end-line="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/ModbusConsoleApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,40 +126,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/channel/CustomModbusRtuChannelInitializer.java">
+        <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/util/ModbusRequestSendUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusSlaveRequestProcessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="62" column="42" lean-forward="true" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/test/java/client/ClientDemo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="27" column="46" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="46" />
+            <state relative-caret-position="274">
+              <caret line="58" column="51" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -125,6 +140,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -136,9 +152,7 @@
       <find>READ</find>
       <find>==</find>
       <find>1.5</find>
-      <find>readHoldingRegistersAsync</find>
       <find>calculateLength</find>
-      <find>/*     */</find>
       <find>https://github.com/zengfr/easymodbus4j</find>
       <find>configfolder</find>
       <find>RTU</find>
@@ -150,6 +164,12 @@
       <find>zengfr</find>
       <find>decode dtu</find>
       <find>READ:</find>
+      <find>user.dir</find>
+      <find>Sytem.setProperty</find>
+      <find>/*     */</find>
+      <find>远程地址</find>
+      <find>readHoldingRegistersAsync</find>
+      <find>readConfig</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -165,17 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/m2m/ModbusTcp2RtuCodec.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/registers/Registers.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/queue/AutoClearConcurrentLinkedQueue.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/ChannelAsyncSender.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/channel/ModbusTcpChannelInitializer.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/ChannelSyncSender.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/ChannelSenderFactory.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/registers/RegistersFactory.java" />
-        <option value="$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4TcpMaster.java" />
-        <option value="$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4RtuSlave.java" />
-        <option value="$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4TcpSlave.java" />
         <option value="$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/server/ModbusServer4TcpSlave.java" />
         <option value="$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/server/ModbusServer4TcpMaster.java" />
         <option value="$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/server/ModbusServer4RtuSlave.java" />
@@ -185,22 +194,17 @@
         <option value="$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/relay/RelayServerChannelInboundHandler.java" />
         <option value="$PROJECT_DIR$/modbus-extension/src/main/java/com/github/sunjx/modbus/handle/impl/ModbusSlaveRequestHandler.java" />
         <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/util/StringUtil.java" />
-        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/util/ModbusRequestSendUtil.java" />
         <option value="$PROJECT_DIR$/example/pom.xml" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/handler/ModbusInboundHandler.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/handler/ModbusLoggingHandler.java" />
-        <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/main/Example.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/cache/ModebusFrameCacheFactory.java" />
-        <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java" />
         <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/util/SimpleSendData.java" />
         <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/channel/DtuRegDecoder.java" />
-        <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java" />
         <option value="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/rtu/ModbusRtuCodecUtil.java" />
         <option value="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/tcp/ModbusTcpLFBFrameDecoder.java" />
         <option value="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ping/ModbusPingDecoder.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/handler/ModbusResponseHandler.java" />
         <option value="$PROJECT_DIR$/modbus-extension/src/main/java/com/github/sunjx/modbus/handle/impl/ModbusMasterResponseHandler.java" />
-        <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusMasterResponseProcessor.java" />
         <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/channel/ModbusRtuChannelInitializer.java" />
         <option value="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/ByteBufUtil.java" />
         <option value="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/RtuCrcUtil.java" />
@@ -216,6 +220,22 @@
         <option value="$PROJECT_DIR$/example/src/test/java/client/ClientDemo.java" />
         <option value="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ModbusPduCodec.java" />
         <option value="$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java" />
+        <option value="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/InputStreamUtil.java" />
+        <option value="$PROJECT_DIR$/modbus-core/src/test/java/Test.java" />
+        <option value="$PROJECT_DIR$/example/src/main/resources/autoSend.txt" />
+        <option value="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/FileUtil.java" />
+        <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/main/Example.java" />
+        <option value="$PROJECT_DIR$/modbus-extension/src/main/java/com/github/sunjx/modbus/processor/AbstractModbusProcessor.java" />
+        <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusMasterResponseProcessor.java" />
+        <option value="$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/util/ModbusFunctionDecoderUtil.java" />
+        <option value="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/request/ReadHoldingRegistersRequest.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/ChannelAsyncSender.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/AbstractChannelSender.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/schedule/ModbusMasterSchedule.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/util/ModbusChannelSenderUtil.java" />
+        <option value="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/util/ModbusRequestSendUtil.java" />
+        <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java" />
+        <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java" />
       </list>
     </option>
   </component>
@@ -257,100 +277,6 @@
             <path>
               <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
               <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-              <item name="sunjx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-              <item name="sunjx" type="462c0819:PsiDirectoryNode" />
-              <item name="modbus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-              <item name="sunjx" type="462c0819:PsiDirectoryNode" />
-              <item name="modbus" type="462c0819:PsiDirectoryNode" />
-              <item name="channel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-              <item name="sunjx" type="462c0819:PsiDirectoryNode" />
-              <item name="modbus" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -428,20 +354,6 @@
               <item name="sunjx" type="462c0819:PsiDirectoryNode" />
               <item name="modbus" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-              <item name="sunjx" type="462c0819:PsiDirectoryNode" />
-              <item name="modbus" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="channel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
@@ -492,6 +404,28 @@
               <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="sunjx" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -510,6 +444,11 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="log" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
@@ -690,6 +629,76 @@
             <path>
               <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
               <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus-codec" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus-codec" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus-codec" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus-codec" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus-codec" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="sunjx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus-codec" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="sunjx" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus-codec" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="github" type="462c0819:PsiDirectoryNode" />
+              <item name="sunjx" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus" type="462c0819:PsiDirectoryNode" />
+              <item name="codec" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
+              <item name="modbus-codec" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="generated-sources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
               <item name="modbus-core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -780,19 +789,6 @@
               <item name="sunjx" type="462c0819:PsiDirectoryNode" />
               <item name="modbus" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="easymodbus4j-dependency" type="b2602c69:ProjectViewProjectNode" />
-              <item name="easymodbus4j-dependency" type="462c0819:PsiDirectoryNode" />
-              <item name="modbus-core" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="github" type="462c0819:PsiDirectoryNode" />
-              <item name="sunjx" type="462c0819:PsiDirectoryNode" />
-              <item name="modbus" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -855,7 +851,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575085558090" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575101286584" />
     <property name="last_opened_file_path" value="D:/Tools/visualvm_142/bin/visualvm.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -866,10 +862,13 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.github.sunjx.modbus.example.example.processor" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodeSpace\DrazenSpace\easymodbus4j-dependency\example\src\main\resources" />
       <recent name="D:\CodeSpace\DrazenSpace\easymodbus4j-dependency\example\src\test\java\client" />
       <recent name="D:\CodeSpace\DrazenSpace\easymodbus4j-dependency\example" />
-      <recent name="D:\CodeSpace\DrazenSpace\easymodbus4j-dependency\example\src\main\resources" />
       <recent name="D:\CodeSpace\DrazenSpace\easymodbus4j-dependency\example\src\main\java\com\github\sunjx\modbus\example" />
       <recent name="D:\CodeSpace\DrazenSpace\easymodbus4j-dependency\modbus-extension\src\main\java\com\github\sunjx" />
     </key>
@@ -886,7 +885,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClientDemo">
+  <component name="RunManager" selected="Application.Example">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -907,6 +906,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DtuConfigLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.sunjx.modbus.example.example.schedule.DtuConfigLoader" />
+      <module name="example" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.sunjx.modbus.example.example.schedule.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Example" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.sunjx.modbus.example.main.Example" />
       <module name="example" />
@@ -920,13 +933,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ModbusFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.sunjx.modbus.protocol.tcp.ModbusFrame" />
+    <configuration name="InputStreamUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.sunjx.modbus.common.util.InputStreamUtil" />
       <module name="modbuscore" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.sunjx.modbus.protocol.tcp.*" />
+          <option name="PATTERN" value="com.github.sunjx.modbus.common.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -934,13 +947,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleSendData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.sunjx.modbus.example.util.SimpleSendData" />
+    <configuration name="ModbusMasterSchedule4ConfigFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.sunjx.modbus.example.example.schedule.ModbusMasterSchedule4ConfigFile" />
       <module name="example" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.sunjx.modbus.example.util.*" />
+          <option name="PATTERN" value="com.github.sunjx.modbus.example.example.schedule.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -979,16 +992,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Example" />
-      <item itemvalue="Application.ModbusFrame" />
-      <item itemvalue="Application.SimpleSendData" />
       <item itemvalue="Application.ClientDemo" />
+      <item itemvalue="Application.InputStreamUtil" />
+      <item itemvalue="Application.ModbusMasterSchedule4ConfigFile" />
+      <item itemvalue="Application.DtuConfigLoader" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientDemo" />
         <item itemvalue="Application.Example" />
-        <item itemvalue="Application.SimpleSendData" />
-        <item itemvalue="Application.ModbusFrame" />
+        <item itemvalue="Application.ClientDemo" />
+        <item itemvalue="Application.ModbusMasterSchedule4ConfigFile" />
+        <item itemvalue="Application.DtuConfigLoader" />
+        <item itemvalue="Application.InputStreamUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -1010,7 +1025,7 @@
       <workItem from="1574910476120" duration="781000" />
       <workItem from="1574923186205" duration="20359000" />
       <workItem from="1574999450375" duration="10113000" />
-      <workItem from="1575077620154" duration="5241000" />
+      <workItem from="1575077620154" duration="13195000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1574414961463</created>
@@ -1054,16 +1069,24 @@
       <option name="project" value="LOCAL" />
       <updated>1575077750333</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commit it">
+      <created>1575092839910</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575092839910</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58857000" />
+    <option name="totallyTimeSpent" value="66811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49874687" visible="true" weight="0.28856042" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49874687" visible="true" weight="0.30591258" />
       <window_info id="Structure" order="1" sideWeight="0.5012531" side_tool="true" weight="0.2403599" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1073,7 +1096,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.36300418" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.31293464" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4867872" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1093,7 +1116,7 @@
       <window_info anchor="right" id="Maven" order="3" weight="0.1625964" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32969153" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -1113,24 +1136,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusMasterResponseProcessor.java</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java</url>
           <line>68</line>
           <properties />
@@ -1146,230 +1151,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/tcp/ModbusTcpCodec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#879#880#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/tcp/ModbusTcpDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-807">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/tcp/ModbusTcpEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/tcp/ModbusTcpLFBFrameDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ModbusMbapCodec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/util/ModbusFunctionDecoderUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-413">
-          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2198">
-          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4RtuMaster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4RtuSlave.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-extension/src/main/java/com/github/sunjx/modbus/handle/impl/ModbusMasterResponseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-538">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/handler/ModbusResponseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.33.Final/netty-all-4.1.33.Final-sources.jar!/io/netty/channel/ChannelInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/resources/start0-Server4TcpMaster-Client4TcpSlave.bat">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/resources/start5-Server4RtuMaster-Client4RtuSlave.bat">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/resources/start6-Server4RtuMaster.bat">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/handler/ModbusLoggingHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/ByteBufUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/RtuCrcUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.33.Final/netty-all-4.1.33.Final-sources.jar!/io/netty/channel/ChannelFutureListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/logging/UdpAppender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="40" lean-forward="true" selection-start-column="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="86" selection-start-line="12" selection-start-column="86" selection-end-line="12" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/handler/ModbusHeartbeatHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-          <folding>
-            <element signature="e#1201#1202#0" expanded="true" />
-            <element signature="e#1239#1240#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/channel/ChannelManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/ModbusConsts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="26" column="49" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.33.Final/netty-all-4.1.33.Final-sources.jar!/io/netty/handler/codec/string/StringEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="66" column="11" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.33.Final/netty-all-4.1.33.Final-sources.jar!/io/netty/handler/codec/DelimiterBasedFrameDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="57" column="60" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
-          <folding>
-            <element signature="e#2806#2807#0" expanded="true" />
-            <element signature="e#2859#2860#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.33.Final/netty-all-4.1.33.Final-sources.jar!/io/netty/handler/codec/ByteToMessageDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.33.Final/netty-all-4.1.33.Final-sources.jar!/io/netty/handler/codec/MessageToMessageDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ping/ModbusPingDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ping/ModbusPingEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ModbusPduRespCodec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/handler/ModbusChannelSyncHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
@@ -1420,23 +1201,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusMasterResponseProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/test/java/client/ClientDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/ModbusPduCodec.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1456,23 +1220,6 @@
             <element signature="e#898#899#0" expanded="true" />
             <element signature="e#938#939#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/channel/DtuRegDecoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/channel/CustomModbusRtuChannelInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1500,41 +1247,306 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java">
+    <entry file="file://$PROJECT_DIR$/example/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1734" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/ModbusConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/dto/PointDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/channel/CustomModbusRtuChannelInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/test/java/client/ClientDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="27" column="46" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/channel/DtuRegDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="62" column="42" lean-forward="true" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
+          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/resources/BG_A4_WK.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="2215" column="24" selection-start-line="2215" selection-start-column="24" selection-end-line="2215" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-core/src/test/java/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="e#129#130#0" expanded="true" />
+            <element signature="e#195#196#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/target/classes/BG_A4_WK.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-680">
+          <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/InputStreamUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusSlaveRequestProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
+        <state relative-caret-position="-34">
           <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java">
+    <entry file="file://$PROJECT_DIR$/modbus-extension/src/main/java/com/github/sunjx/modbus/processor/AbstractModbusProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="-113">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/ChannelSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="105" column="73" selection-start-line="105" selection-start-column="59" selection-end-line="105" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/AbstractRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-codec/src/main/java/com/github/sunjx/modbus/codec/util/ModbusFunctionDecoderUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="40" column="20" lean-forward="true" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/AbstractChannelSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/ChannelAsyncSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/func/request/ReadHoldingRegistersRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.33.Final/netty-all-4.1.33.Final-sources.jar!/io/netty/util/internal/logging/InternalLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusMasterResponseProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/processor/ExampleModbusMasterResponseProcessor_BAK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusDataPointConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/util/ModbusChannelSenderUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/resources/autoSend.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/schedule/ModbusMasterSchedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="54" column="44" lean-forward="true" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/sender/util/ModbusRequestSendUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="58" column="51" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/server/ModbusServer4RtuMaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/server/CustomableModbusServer4RtuMaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/ModbusSetup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/ModbusConsoleApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/logging/UdpAppender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1251">
+          <caret line="103" column="34" lean-forward="true" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar!/ch/qos/logback/core/AppenderBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/server/ModbusServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/main/Example.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="72" column="60" selection-start-line="72" selection-start-column="60" selection-end-line="72" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="169" column="21" lean-forward="true" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
+        <state relative-caret-position="255">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#5331#5332#0" expanded="true" />
+            <element signature="e#5360#5361#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

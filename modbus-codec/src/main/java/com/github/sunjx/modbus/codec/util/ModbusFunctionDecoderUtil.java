@@ -47,7 +47,7 @@ public class ModbusFunctionDecoderUtil {
                 function = new WriteMultipleRegistersRequest();
         }
 
-        return (ModbusFunction)function;
+        return function;
     }
 
     public static ModbusFunction decodeRespFunction(short functionCode) {
@@ -93,7 +93,7 @@ public class ModbusFunctionDecoderUtil {
             function = new ErrorFunctionResponse(functionCode, (short)1);
         }
 
-        return (ModbusFunction)function;
+        return function;
     }
 }
 

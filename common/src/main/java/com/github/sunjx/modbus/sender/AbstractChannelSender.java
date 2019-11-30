@@ -56,52 +56,34 @@ public abstract class AbstractChannelSender {
     }
 
     protected ModbusFrame buildModbusFrame(ModbusFunction function) {
-        /*  70 */
         ModbusHeader header = buildModbusHeader(function);
-        /*  71 */
         return new ModbusFrame(header, function);
     }
 
     protected ModbusHeader buildModbusHeader(ModbusFunction function) {
-        // requestid
         int transactionId = ModbusTransactionIdUtil.calculateTransactionId();
-        // 5
         int pduLength = function.calculateLength();
-        /*  77 */
         ModbusHeader header = new ModbusHeader(transactionId, this.protocolIdentifier, pduLength, this.unitIdentifier);
-        /*  78 */
         return header;
     }
 
     public int sendModbusFrame(final ModbusFrame frame) {
-        /*  82 */
-        final Short funcCode = Short.valueOf(frame.getFunction().getFunctionCode());
-        /*  83 */
+        final Short funcCode = frame.getFunction().getFunctionCode();
         ModebusFrameCacheFactory.getInstance().getRequestCache(funcCode).put(frame);
-        /*  84 */
         final int transactionId = ModbusTransactionIdUtil.getTransactionIdByRemote(this.channel);
-        /*  85 */
         ChannelFutureListener channelFutureListener = new ChannelFutureListener() {
             @Override
             public void operationComplete(ChannelFuture channelFuture) throws Exception {
-                /*  88 */
                 if (channelFuture.isSuccess()) {
-                    /*  89 */
-                    ModebusFrameCacheFactory.getInstance().getRequestCache(funcCode).put(Integer.valueOf(transactionId), frame);
+                    ModebusFrameCacheFactory.getInstance().getRequestCache(funcCode).put(transactionId, frame);
                 } else {
-                    /*  91 */
                     channelFuture.channel().close();
                 }
             }
         };
-        /*  95 */
         Channel channel = getChannel();
-        /*  96 */
         channelSyncTryAcquire(channel, funcCode);
-        /*  97 */
-        channel.writeAndFlush(frame).addListener((GenericFutureListener) channelFutureListener);
-
-        /*  99 */
+        channel.writeAndFlush(frame).addListener(channelFutureListener);
         return (frame.getHeader().getTransactionIdentifier() < 0) ? transactionId : frame.getHeader().getTransactionIdentifier();
     }
 
@@ -130,14 +112,10 @@ public abstract class AbstractChannelSender {
 
 
     protected ModbusResponseHandler getResponseHandler(Channel channel) {
-        /* 121 */
         ModbusResponseHandler handler = (ModbusResponseHandler) channel.pipeline().get("responseHandler");
-        /* 122 */
         if (handler == null) {
-            /* 123 */
             throw new NullPointerException("com/github/sunjx/modbus/handler");
         }
-        /* 125 */
         return handler;
     }
 }

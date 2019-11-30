@@ -8,6 +8,7 @@ import com.google.common.collect.Lists;
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -23,7 +24,7 @@ public class DtuConfigLoader {
     private DtuConfigLoader() {
         this.cache = CacheBuilder.newBuilder().expireAfterWrite(300000L, TimeUnit.MILLISECONDS).build();
     }
-
+//
     protected static String path = System.getProperty("user.dir");
     private Cache<String, List<ModbusDataPointConfig>> cache;
 
@@ -32,8 +33,8 @@ public class DtuConfigLoader {
     }
 
     public List<ModbusDataPointConfig> loadDtuConfig(String dtuName) {
-        List<ModbusDataPointConfig> dpConfigs = (List) this.cache.getIfPresent(dtuName);
-        if (dpConfigs == null) {
+        List<ModbusDataPointConfig> dpConfigs = this.cache.getIfPresent(dtuName);
+        if (dpConfigs == null||dpConfigs.size() == 0) {
             dpConfigs = loadDataPointConfig( dtuName + ".txt");
             this.cache.put(dtuName, dpConfigs);
         }
@@ -66,10 +67,10 @@ public class DtuConfigLoader {
         int lineNumber = 1;
         try {
             InputStream input = InputStreamUtil.getStream(fileName);
-            if (input != null)
+            if (input != null) {
                 for (String line : FileUtil.readLines(input, StandardCharsets.UTF_8)) {
                     if (!line.matches("^\\s*#.*") && !line.matches("^\\s*$")) {
-                        String[] strArr = line.split("[\\t,]");
+                        String[] strArr = line.split("[\\t;|]");
                         if (strArr.length < 6) {
                             logger.warn("点位配置文件格式不正确，文件 %s, 第%d行。", fileName, lineNumber);
                         } else {
@@ -92,6 +93,7 @@ public class DtuConfigLoader {
                     }
                     lineNumber++;
                 }
+            }
 
         } catch (IOException ex) {
             logger.error("readConfig:" + fileName + " ex:", ex);

@@ -28,20 +28,20 @@ public class ModbusRequestSendUtil {
 
     public static void sendRequests(Collection<Channel> channels, List<String> reqs, boolean isAllUseAsync, int fixedDelay, PriorityStrategy strategy) {
         switch (strategy) {
-
             case Channel:
                 sendRequestsByChannelFirst(channels, reqs, isAllUseAsync, fixedDelay);
-
             case Req:
                 sendRequestsByReqFirst(channels, reqs, isAllUseAsync, fixedDelay);
                 break;
-
+            default:
+                break;
         }
 
     }
 
     /**
      * todo
+     *
      * @param channels
      * @param reqs
      * @param isAllUseAsync
@@ -61,36 +61,23 @@ public class ModbusRequestSendUtil {
                         String funcString = args[0];
                         // 寄存器地址起
                         String addressString = args[1];
-
                         String value = args[2];
-
                         if (isAllUseAsync && !funcString.endsWith("Async")) {
                             funcString = funcString + "Async";
                         }
-
                         if (!funcString.endsWith("Async")) {
-                            /*  71 */
                             sendSyncFunc(sender, funcString, addressString, value);
-
                         } else {
-                            // 发送消息
                             sendAsyncFunc(sender, funcString, addressString, value);
                         }
                         long endTime = System.currentTimeMillis();
                         long span = endTime - startTime;
-                        // 666
                         if (fixedDelay - span > 0L) {
-                            /*  77 */
                             Thread.sleep(fixedDelay - span);
-
                         }
-
                     }
-                    /*  80 */
                 } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | IllegalArgumentException | SecurityException | InterruptedException ex) {
-                    /*  81 */
                     log.error("sendRequestsByChannelFirst", ex);
-
                 }
 
             }
@@ -217,45 +204,25 @@ public class ModbusRequestSendUtil {
 
 
     public static int sendAsyncFunc(ChannelSender sender, String funcString, String addressStr, String value) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
-        /* 147 */
         int transactionId = 0;
-        /* 148 */
         if (!funcString.startsWith("#")) {
-            /* 149 */
             Integer address = Integer.valueOf(addressStr);
-            /* 150 */
             if (!funcString.endsWith("Async")) {
-                /* 151 */
                 funcString = funcString + "Async";
-
             }
-            /* 153 */
             if ("TF".contains(value)) {
-                /* 154 */
-                transactionId = ModbusChannelSenderUtil.sendAsyncFunc(sender, funcString, address.intValue(), value.equalsIgnoreCase("T"));
-                /* 155 */
+                transactionId = ModbusChannelSenderUtil.sendAsyncFunc(sender, funcString, address, value.equalsIgnoreCase("T"));
             } else if (value.contains(",")) {
-                /* 156 */
                 String[] values = value.split("[,]");
-                /* 157 */
                 if (value.contains("T") || value.contains("F")) {
-                    /* 158 */
-                    transactionId = ModbusChannelSenderUtil.sendAsyncFunc(sender, funcString, address.intValue(), ParseStringUtil.parseBooleanArray(values));
-
+                    transactionId = ModbusChannelSenderUtil.sendAsyncFunc(sender, funcString, address, ParseStringUtil.parseBooleanArray(values));
                 } else {
-                    /* 160 */
-                    transactionId = ModbusChannelSenderUtil.sendAsyncFunc(sender, funcString, address.intValue(), IntArrayUtil.toIntArray(values));
-
+                    transactionId = ModbusChannelSenderUtil.sendAsyncFunc(sender, funcString, address, IntArrayUtil.toIntArray(values));
                 }
-
             } else {
-                /* 163 */
-                transactionId = ModbusChannelSenderUtil.sendAsyncFunc(sender, funcString, address.intValue(), Integer.valueOf(value).intValue());
-
+                transactionId = ModbusChannelSenderUtil.sendAsyncFunc(sender, funcString, address, Integer.valueOf(value));
             }
-
         }
-        /* 166 */
         return transactionId;
 
     }

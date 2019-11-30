@@ -13,25 +13,19 @@ import java.util.concurrent.TimeUnit;
 
 
 public abstract class ModbusMasterSchedule {
-    /* 42 */   private Cache<Integer, List<String>> cache = CacheBuilder.newBuilder().expireAfterWrite(300000L, TimeUnit.MILLISECONDS).build();
+    private Cache<Integer, List<String>> cache = CacheBuilder.newBuilder().expireAfterWrite(300000L, TimeUnit.MILLISECONDS).build();
 
     protected abstract ModbusRequestSendUtil.PriorityStrategy getPriorityStrategy();
 
     protected abstract List<String> buildReqsList();
 
     protected List<String> getReqsListByCache() {
-        /* 45 */
-        Integer key = Integer.valueOf(0);
-        /* 46 */
-        List<String> reqStrs = (List<String>) this.cache.getIfPresent(key);
-        /* 47 */
+        Integer key = 0;
+        List<String> reqStrs = this.cache.getIfPresent(key);
         if (reqStrs == null || reqStrs.isEmpty()) {
-            /* 48 */
             reqStrs = buildReqsList();
-            /* 49 */
             this.cache.put(key, reqStrs);
         }
-        /* 51 */
         return reqStrs;
     }
 
@@ -40,9 +34,7 @@ public abstract class ModbusMasterSchedule {
     protected abstract InternalLogger getLogger();
 
     public void schedule(Collection<Channel> channels, int sleep) {
-        /* 55 */
         getLogger().debug(String.format("com.github.sunjx.modbus.schedule->channels:%s,sleep:%s ms", new Object[]{Integer.valueOf(channels.size()), Integer.valueOf(sleep)}));
-        /* 56 */
         sendRequests4Auto(channels, sleep);
     }
 
@@ -50,28 +42,21 @@ public abstract class ModbusMasterSchedule {
         /* 60 */
         List<String> reqStrs = buildReqsList();
         /* 61 */
-        getLogger().debug(String.format("channels:%s,reqStrs:%s", new Object[]{Integer.valueOf(channels.size()), Integer.valueOf(reqStrs.size())}));
+        getLogger().debug(String.format("channels:%s,reqStrs:%s", channels.size(), reqStrs.size()));
         /* 62 */
         ModbusRequestSendUtil.sendRequests(channels, reqStrs, true, getFixedDelay(), getPriorityStrategy());
     }
 
     private void sendRequests4Auto(Collection<Channel> channels, int sleep) {
-        /* 66 */
         Runnable r = () -> {
             try {
-                /* 68 */
                 List<String> reqStrs = getReqsListByCache();
-                /* 69 */
-                getLogger().debug(String.format("channels:%s,reqStrs:%s,sleep:%s ms", new Object[]{Integer.valueOf(channels.size()), Integer.valueOf(reqStrs.size()), Integer.valueOf(sleep)}));
-                /* 70 */
+                getLogger().debug(String.format("channels:%s,reqStrs:%s,sleep:%s ms", channels.size(), reqStrs.size(), sleep));
                 ModbusRequestSendUtil.sendRequests(channels, reqStrs, true, getFixedDelay(), getPriorityStrategy());
-                /* 71 */
             } catch (Exception ex) {
-                /* 72 */
                 getLogger().error(ex);
             }
         };
-        /* 75 */
         ScheduledUtil.scheduleWithFixedDelay(r, sleep);
     }
 }
