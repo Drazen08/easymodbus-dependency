@@ -18,8 +18,7 @@ import java.util.List;
 
 public class ModbusRequestSendUtil {
     public enum PriorityStrategy {
-        /*  39 */     Channel, Req;
-
+        Channel, Req;
     }
 
 
@@ -88,23 +87,16 @@ public class ModbusRequestSendUtil {
 
 
     private static void sendRequestsByReqFirst(Collection<Channel> channels, List<String> reqs, boolean isAllUseAsync, int fixedDelay) {
-        /*  88 */
         for (String str : reqs) {
-            /*  89 */
             long startTime = System.currentTimeMillis();
-            /*  90 */
             for (Channel channel : channels) {
 
                 try {
-                    /*  92 */
                     if (channel == null || !channel.isActive() || !channel.isOpen() || !channel.isWritable()) {
                         continue;
                     }
-                    /*  94 */
                     ChannelSender sender = ChannelSenderFactory.getInstance().get(channel);
-                    /*  95 */
                     String[] args = str.split("[;|]");
-                    /*  96 */
                     if (args.length >= 3) {
                         // todo
                         // readHoldingRegistersAsync
@@ -117,28 +109,18 @@ public class ModbusRequestSendUtil {
                         String value = args[2];
 
                         if (isAllUseAsync && !funcString.endsWith("Async")) {
-                            /* 101 */
                             funcString = funcString + "Async";
-
                         }
-                        /* 103 */
                         if (!funcString.endsWith("Async")) {
-                            /* 104 */
                             sendSyncFunc(sender, funcString, addressString, value);
                             continue;
 
                         }
-                        /* 106 */
                         sendAsyncFunc(sender, funcString, addressString, value);
-
                     }
-                    /* 108 */
                 } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | IllegalArgumentException | SecurityException ex) {
-                    /* 109 */
                     log.error("sendRequestsByReqFirst", ex);
-
                 }
-
             }
             /* 112 */
             long endTime = System.currentTimeMillis();

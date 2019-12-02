@@ -60,9 +60,3 @@ public abstract class ModbusMasterSchedule {
         ScheduledUtil.scheduleWithFixedDelay(r, sleep);
     }
 }
-
-
-/* Location:              D:\logs\easymodbus4j-0.0.5.jar!\com\github\zengfr\easymodbus4j\com.github.sunjx.modbus.schedule\ModbusMasterSchedule.class
- * Java compiler version: 8 (52.0)
- * JD-Core Version:       1.1.2
- */
