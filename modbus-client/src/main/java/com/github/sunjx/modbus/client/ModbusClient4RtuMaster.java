@@ -23,7 +23,7 @@ public class ModbusClient4RtuMaster
 
     @Override
     protected ChannelInitializer<SocketChannel> getChannelInitializer(ModbusInboundHandler handler) {
-        return (ChannelInitializer<SocketChannel>) new ModbusRtuChannelInitializer(Boolean.valueOf(false), (SimpleChannelInboundHandler) handler);
+        return (ChannelInitializer<SocketChannel>) new ModbusRtuChannelInitializer(Boolean.FALSE, handler);
     }
 }
 

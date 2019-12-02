@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eb4e22f0-271f-4a75-83b6-0f1ce1ffd319" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/schedule/ModbusMasterSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/schedule/ModbusMasterSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/main/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/main/Example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/test/java/client/ClientDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/test/java/client/ClientDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/logging/UdpAppender.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/logging/UdpAppender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/src/main/resources/BG_A4_WK.txt" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/main/resources/BG_A4_WK.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4RtuMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4RtuMaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClientRtuFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClientRtuFactory.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,36 +39,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="93" column="18" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/channel/DtuRegDecoder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/channel/CustomModbusRtuChannelInitializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/src/main/java/com/github/sunjx/modbus/channel/ModbusChannelInitializer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -90,7 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="258">
@@ -98,6 +64,60 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4RtuMaster.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClientRtuFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/example/src/main/resources/BG_A4_WK.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/src/main/resources/autoSend.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4RtuSlave.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-116">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -163,9 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/server/ModbusServer4TcpMaster.java" />
-        <option value="$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/server/ModbusServer4RtuSlave.java" />
-        <option value="$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/relay/RelayChannelInboundHandler.java" />
         <option value="$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/relay/RelayClientChannelInboundHandler.java" />
         <option value="$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/relay/RelayConsoleApp.java" />
         <option value="$PROJECT_DIR$/modbus-server/src/main/java/com/github/sunjx/modbus/relay/RelayServerChannelInboundHandler.java" />
@@ -214,6 +231,9 @@
         <option value="$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/DtuConfigLoader.java" />
         <option value="$PROJECT_DIR$/example/src/test/java/client/ClientDemo.java" />
         <option value="$PROJECT_DIR$/example/src/test/java/client/ClientHandler.java" />
+        <option value="$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4RtuMaster.java" />
+        <option value="$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClientRtuFactory.java" />
+        <option value="$PROJECT_DIR$/example/src/main/resources/BG_A4_WK.txt" />
       </list>
     </option>
   </component>
@@ -882,7 +902,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575106115768" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575110083287" />
     <property name="last_opened_file_path" value="D:/Tools/visualvm_142/bin/visualvm.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1057,7 +1077,7 @@
       <workItem from="1574923186205" duration="20359000" />
       <workItem from="1574999450375" duration="10113000" />
       <workItem from="1575077620154" duration="13195000" />
-      <workItem from="1575101520134" duration="4663000" />
+      <workItem from="1575101520134" duration="6185000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1574414961463</created>
@@ -1108,16 +1128,24 @@
       <option name="project" value="LOCAL" />
       <updated>1575092839910</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="调通版本">
+      <created>1575106293501</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575106293501</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71474000" />
+    <option name="totallyTimeSpent" value="72996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49874687" visible="true" weight="0.35861182" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49874687" visible="true" weight="0.35861182" />
       <window_info id="Structure" order="1" sideWeight="0.5012531" side_tool="true" weight="0.2403599" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1127,7 +1155,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.36300418" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3588317" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3588317" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1144,7 +1172,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.1625964" />
+      <window_info anchor="right" id="Maven" order="3" visible="true" weight="0.1625964" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="Database" order="6" weight="0.32969153" />
@@ -1161,35 +1189,10 @@
     </ignored-roots>
     <MESSAGE value="commit" />
     <MESSAGE value="commit it" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit it" />
+    <MESSAGE value="调通版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="调通版本" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.m2/repository/io/netty/netty-all/4.1.33.Final/netty-all-4.1.33.Final-sources.jar!/io/netty/buffer/ByteBufUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="111" column="25" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1734" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/dto/PointDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modbus-core/src/main/java/com/github/sunjx/modbus/common/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1282,13 +1285,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/resources/autoSend.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1446,13 +1442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/src/main/resources/BG_A4_WK.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/src/main/java/com/github/sunjx/modbus/example/example/schedule/ModbusMasterSchedule4ConfigFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1555,6 +1544,48 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4RtuSlave.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-116">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClient4RtuMaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modbus-client/src/main/java/com/github/sunjx/modbus/client/ModbusClientRtuFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/resources/autoSend.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/main/resources/BG_A4_WK.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
         </state>
       </provider>
     </entry>

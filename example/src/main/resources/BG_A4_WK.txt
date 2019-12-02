@@ -1,8 +1,8 @@
 readHoldingRegistersAsync|512|1|10|/1_INT
-readHoldingRegistersAsync|513|1|10|/1_INT
-readHoldingRegistersAsync|514|1|10|/1_INT
-readHoldingRegistersAsync|515|1|10|/1_INT
-readHoldingRegistersAsync|516|1|10|/1_INT
+readHoldingRegistersAsync|513|2|10|/1_INT
+readHoldingRegistersAsync|514|2|10|/1_INT
+readHoldingRegistersAsync|515|3|10|/1_INT
+readHoldingRegistersAsync|516|4|10|/1_INT
 readHoldingRegistersAsync|517|1|10|/1_INT
 readHoldingRegistersAsync|518|1|10|/1_INT
 readHoldingRegistersAsync|519|1|10|/1_INT
