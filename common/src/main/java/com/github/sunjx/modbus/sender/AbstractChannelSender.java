@@ -8,6 +8,7 @@ import com.github.sunjx.modbus.protocol.ModbusFunction;
 import com.github.sunjx.modbus.protocol.tcp.ModbusFrame;
 import com.github.sunjx.modbus.protocol.tcp.ModbusHeader;
 import com.github.sunjx.modbus.util.ModbusTransactionIdUtil;
+import io.netty.buffer.ByteBufUtil;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
@@ -81,6 +82,7 @@ public abstract class AbstractChannelSender {
                 }
             }
         };
+
         Channel channel = getChannel();
         channelSyncTryAcquire(channel, funcCode);
         channel.writeAndFlush(frame).addListener(channelFutureListener);

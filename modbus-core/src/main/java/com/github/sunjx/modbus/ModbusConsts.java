@@ -24,7 +24,7 @@
    public static final String CODE_WEBSITE = "https://github.com/zengfr/easymodbus4j";
    public static final String DEFAULT_CHARSET = "UTF-8";
    public static final String DEFAULT_HOTST_IP = "127.0.0.1";
-/* 27 */   public static String HEARTBEAT = "PING";
+   public static String HEARTBEAT = "PING";
 
 
    public static final int ADU_MAX_LENGTH = 260;

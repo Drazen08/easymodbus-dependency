@@ -13,13 +13,11 @@ import io.netty.util.internal.logging.InternalLoggerFactory;
 import java.util.List;
 
 
-public class ModbusTcpCodec
-        extends ByteToMessageCodec<ModbusFrame> {
-    /* 36 */   private static final InternalLogger log = InternalLoggerFactory.getInstance(ModbusTcpCodec.class);
+public class ModbusTcpCodec extends ByteToMessageCodec<ModbusFrame> {
+    private static final InternalLogger log = InternalLoggerFactory.getInstance(ModbusTcpCodec.class);
 
     private final ModbusPduCodec pduCodec;
 
-    /* 40 */
     public ModbusTcpCodec(ModbusPduCodec pduCodec) {
         this.pduCodec = pduCodec;
     }
@@ -36,15 +34,8 @@ public class ModbusTcpCodec
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
         log.debug("decode");
         ModbusHeader mbapHeader = ModbusHeader.decode(in);
-        ModbusFunction function = (ModbusFunction) this.pduCodec.decode(in);
+        ModbusFunction function = this.pduCodec.decode(in);
         ModbusFrame frame = new ModbusFrame(mbapHeader, function);
-        /* 55 */
         out.add(frame);
     }
 }
-
-
-/* Location:              D:\logs\easymodbus4j-codec-0.0.5.jar!\com\github\zengfr\easymodbus4j\codec\tcp\ModbusTcpCodec.class
- * Java compiler version: 8 (52.0)
- * JD-Core Version:       1.1.2
- */

@@ -1,6 +1,5 @@
 package com.github.sunjx.modbus.client;
 
-import com.github.sunjx.modbus.channel.ChannelManager;
 import com.github.sunjx.modbus.channel.ChannelManagerImpl;
 import com.github.sunjx.modbus.channel.ChannelReconnectable;
 import com.github.sunjx.modbus.handler.ModbusInboundHandler;
@@ -27,13 +26,14 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.concurrent.TimeUnit;
 
-public abstract class ModbusClient
-        extends ChannelManagerImpl
-        implements ChannelReconnectable {
+public abstract class ModbusClient extends ChannelManagerImpl implements ChannelReconnectable {
 
     protected static final InternalLogger log = InternalLoggerFactory.getInstance(ModbusClient.class);
 
     public enum CONNECTION_STATES {
+        /**
+         *
+         */
         connected, notConnected, pending;
     }
 
@@ -55,13 +55,13 @@ public abstract class ModbusClient
 
 
     protected void setup(ModbusRequestHandler reqhandler) throws Exception {
-        reqhandler.setChannelManager((ChannelManager) this);
-        ChannelInitializer<SocketChannel> handler = getChannelInitializer((ModbusInboundHandler) reqhandler);
+        reqhandler.setChannelManager(this);
+        ChannelInitializer<SocketChannel> handler = getChannelInitializer(reqhandler);
         setup(handler);
     }
 
     protected void setup(ModbusResponseHandler resphandler) throws Exception {
-        resphandler.setChannelManager((ChannelManager) this);
+        resphandler.setChannelManager(this);
         ChannelInitializer<SocketChannel> handler = getChannelInitializer((ModbusInboundHandler) resphandler);
         setup(handler);
     }
@@ -79,8 +79,8 @@ public abstract class ModbusClient
             this.bootstrap = new Bootstrap();
             this.bootstrap.group(this.workerGroup);
             this.bootstrap.channel(NioSocketChannel.class);
-            this.bootstrap.option(ChannelOption.SO_KEEPALIVE, Boolean.valueOf(true));
-            this.bootstrap.handler((ChannelHandler) handler);
+            this.bootstrap.option(ChannelOption.SO_KEEPALIVE, Boolean.TRUE);
+            this.bootstrap.handler(handler);
             doConnect(this.workerGroup);
         } catch (Exception ex) {
             setConnectionState(CONNECTION_STATES.notConnected);
@@ -128,20 +128,14 @@ public abstract class ModbusClient
         }
     }
 
-
-    /* 149 */
     private void bindSchedule4DoConnect(Channel channel, final EventLoopGroup workerGroup) {
         channel.eventLoop().schedule(new Runnable() {
             @Override
             public void run() {
                 try {
-                    /* 153 */
-                    ModbusClient.log.info(String.format("doConnect", new Object[0]));
-                    /* 154 */
+                    ModbusClient.log.info(String.format("doConnect"));
                     ModbusClient.this.doConnect(workerGroup);
-                    /* 155 */
                 } catch (InterruptedException ex) {
-                    /* 156 */
                     ModbusClient.log.error("doConnect", ex);
                 }
             }

@@ -8,7 +8,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
-import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class UdpAppender
@@ -17,12 +17,15 @@ public class UdpAppender
     int port;
     String ip;
     DatagramSocket socket;
-
-    /* 39 */
+    static AtomicInteger portAdd = new AtomicInteger(9002);
     public LayoutWrappingEncoder<ILoggingEvent> getEncoder() {
         return this.encoder;
     }
 
+    private int initPort(){
+//        int port = 1024 + (int) ((new Date()).getTime() / 1000L) % 64000 ;
+        return portAdd.incrementAndGet();
+    }
 
     /* 42 */
     public void setEncoder(LayoutWrappingEncoder<ILoggingEvent> encoder) {
@@ -78,9 +81,8 @@ public class UdpAppender
         if (this.socket == null) {
             try {
                 /* 73 */
-                int port = 1024 + (int) ((new Date()).getTime() / 1000L) % 64000 ;
-//                int port = 9900;
-                this.socket = new DatagramSocket(port);
+
+                this.socket = new DatagramSocket(initPort());
                 /* 74 */
             } catch (SocketException e) {
                 /* 75 */
@@ -97,12 +99,9 @@ public class UdpAppender
             /* 83 */
             byte[] buf = this.encoder.getLayout().doLayout(event).trim().getBytes();
             /* 84 */
-            if (buf.length < 6556) {
-                /* 85 */
+            if (buf.length < 65536) {
                 InetAddress address = InetAddress.getByName(this.ip);
-                /* 86 */
                 DatagramPacket p = new DatagramPacket(buf, buf.length, address, this.port);
-                /* 87 */
                 this.socket.send(p);
             }
             /* 89 */

@@ -31,12 +31,9 @@ public class ModbusMasterResponseHandler extends ModbusResponseHandler {
 
     @Override
     protected boolean processResponseFrame(Channel channel, ModbusFrame frame) {
-        /* 48 */
         if (this.processor.isShowFrameDetail()) {
-            /* 49 */
             ModbusFrameUtil.showFrameLog(log, channel, frame, true);
         }
-        /* 51 */
         return super.processResponseFrame(channel, frame);
     }
 

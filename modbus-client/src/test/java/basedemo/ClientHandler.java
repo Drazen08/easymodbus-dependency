@@ -1,4 +1,4 @@
-package client;
+package basedemo;
 
 import com.github.sunjx.modbus.common.util.RtuCrcUtil;
 import com.github.sunjx.modbus.protocol.tcp.ModbusFrame;
@@ -59,30 +59,44 @@ public class ClientHandler extends SimpleChannelInboundHandler<ModbusFrame> {
         ClientDemo.doConnect();
     }
 
-    private void doLog(byte[] buff){
+    private void doLog(ModbusFrame frame) {
+        ByteBuf encode = frame.encode();
+        byte[] bytes = new byte[encode.readableBytes()];
+        encode.readBytes(bytes);
         log.info("---------------------");
-        log.info("receiveBuffer:[{}]", ByteBufUtil.hexDump(buff));
+        log.info("receiveBuffer:[{}]", ByteBufUtil.hexDump(bytes));
         log.info("---------------------");
     }
 
 
-    /**
-     * <strong>Please keep in mind that this method will be renamed to
-     * {@code messageReceived(ChannelHandlerContext, I)} in 5.0.</strong>
-     * <p>
-     * Is called for each message of type {@link I}.
-     *
-     * @param ctx the {@link ChannelHandlerContext} which this {@link SimpleChannelInboundHandler}
-     *            belongs to
-     * @param msg the message to handle
-     * @throws Exception is thrown if an error occurred
-     */
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, ModbusFrame msg) throws Exception {
-        ByteBuf encode = msg.encode();
-        byte[] result = new byte[encode.readableBytes()];
-        encode.readBytes(result);
-        doLog(result);
+        doLog(msg);
+        answer(ctx, msg);
+    }
+
+
+    private void answer(ChannelHandlerContext channel, ModbusFrame frame) {
+
+        ByteBuf buffer = Unpooled.buffer();
+//        buffer.writeBytes(frame.encode());
+
+        String base = "01030BD50002";
+        byte[] bytes = ByteBufUtil.decodeHexDump(base);
+        buffer.writeBytes(bytes);
+
+//        int paramLength = 2;
+//        short paramValue = 2124;
+//        buffer.writeInt(paramLength);
+//        buffer.writeShort(paramValue);
+
+        int startReaderIndex = buffer.readableBytes();
+        int crc = RtuCrcUtil.calculateCRC(buffer);
+        buffer.readerIndex(startReaderIndex);
+        buffer.writeByte((byte) (0xFF & crc >> 8));
+        buffer.writeByte((byte) (0xFF & crc));
+
+        channel.writeAndFlush(buffer);
     }
 
 
@@ -103,12 +117,6 @@ public class ClientHandler extends SimpleChannelInboundHandler<ModbusFrame> {
 
         buffer.writeBytes(("DTU:" + channelKey).getBytes(StandardCharsets.UTF_8));
         buffer.writeBytes("\0".getBytes());
-//        int startReaderIndex = buffer.readerIndex();
-//
-//        int crc = RtuCrcUtil.calculateCRC(buffer);
-//        buffer.readerIndex(startReaderIndex);
-//        buffer.writeByte((byte) (0xFF & crc >> 8));
-//        buffer.writeByte((byte) (0xFF & crc));
 
         ctx.writeAndFlush(buffer);
     }

@@ -11,6 +11,7 @@ import java.util.List;
 
 
 public class ModbusPingDecoder extends MessageToMessageDecoder<ByteBuf> {
+
     private static final InternalLogger logger = InternalLoggerFactory.getInstance(ModbusPingDecoder.class);
     private final Charset charset;
     private final String heartBeat;

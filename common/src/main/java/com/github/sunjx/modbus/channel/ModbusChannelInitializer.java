@@ -41,9 +41,9 @@ public abstract class ModbusChannelInitializer extends ChannelInitializer<Socket
 
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
-        log.info(String.format("initChannel->isSlave:%s", new Object[]{this.isSlave}));
+        log.info(String.format("initChannel->isSlave:%s", this.isSlave));
         if (ch.localAddress() != null || ch.remoteAddress() != null) {
-            log.info(String.format("initChannel->%s,%s", new Object[]{ch.localAddress(), ch.remoteAddress()}));
+            log.info(String.format("initChannel->%s,%s", ch.localAddress(), ch.remoteAddress()));
         }
         // 注册各handler
         ChannelPipeline pipeline = ch.pipeline();

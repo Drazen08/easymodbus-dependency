@@ -17,8 +17,6 @@ public abstract class ModbusInboundHandler extends SimpleChannelInboundHandler<M
     private static final InternalLogger log = InternalLoggerFactory.getInstance(ModbusInboundHandler.class);
     private ChannelManager channelManager;
 
-
-    /* 44 */
     public void setChannelManager(ChannelManager channelManager) {
         this.channelManager = channelManager;
     }
@@ -26,12 +24,9 @@ public abstract class ModbusInboundHandler extends SimpleChannelInboundHandler<M
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        /* 49 */
         if (!ctx.channel().isActive()) {
-            /* 50 */
             ctx.channel().close();
         } else {
-            /* 52 */
             super.exceptionCaught(ctx, cause);
         }
     }
@@ -57,7 +52,6 @@ public abstract class ModbusInboundHandler extends SimpleChannelInboundHandler<M
                 }, 5L, TimeUnit.SECONDS);
             }
         }
-        /* 70 */
         super.channelInactive(ctx);
     }
 
